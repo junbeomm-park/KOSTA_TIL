@@ -13,7 +13,7 @@ public class Mission01 {
 		Scanner sc = new Scanner(System.in);
 		
 		int kor,eng,mat,sum;
-		double avg;
+		int avg;
 		
 		
 		
@@ -32,7 +32,7 @@ public class Mission01 {
 		String name = sc.nextLine();
 		
 		sum = kor + eng + mat;
-		avg = sum / 3.0;
+		avg = sum / 3;
 		
 		DecimalFormat form = new DecimalFormat("##.##");
 		
@@ -45,6 +45,43 @@ public class Mission01 {
 		System.out.println("평균 : "+ avg);
 		System.out.println("평균 : "+ form.format(avg));
 		
+		String grade = "";
+		//5. 평균에 해당하는 학점
+//		if(avg >= 90.0) {
+//			grade = "A학점";
+//		}else if(avg >= 80.0) {
+//			grade = "B학점";
+//		}else if(avg >= 70.0) {
+//			grade = "C학점";
+//		}else if(avg >= 60.0) {
+//			grade = "D학점";
+//		}else {
+//			grade = "F학점";
+//		}
+		
+		//6. if~else if => switch
+		
+		switch (avg/10) {
+		case 10:
+		case 9:
+			grade = "A학점";
+			break;
+		case 8:
+			grade = "B학점";
+			break;
+		case 7:
+			grade = "C학점";
+			break;
+		case 6:
+			grade = "D학점";
+			break;
+
+		default:
+			grade = "F학점";
+			break;
+		}
+		
+		System.out.println("학점 : " +grade);
 		
 		
 	}
