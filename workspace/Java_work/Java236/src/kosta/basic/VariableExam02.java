@@ -48,7 +48,7 @@ public class VariableExam02 {
 		System.out.print("연산자 : ");
 		sc.nextLine();
 		String op = sc.nextLine();
-		op = op.trim();
+		op = op.trim(); // trim() -> 양옆 공백 제거
 		
 		int result = 0;
 		
