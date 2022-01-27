@@ -82,9 +82,31 @@ public class LoopExam01 {
 //			System.out.println("hello");
 //		}
 		
-		while(true) {
-			System.out.println("hello2");
+//		while(true) {
+//			System.out.println("hello2");
+//		}
+		
+		for(int i = 0; i < 100; i++) {
+			if(i % 3 != 0) {
+				continue;
+				
+			}
+			System.out.println(i);
 		}
+		
+		int a = 0;
+		int b = 0;
+		
+		while(true) {
+			System.out.println("a : ");
+			a = sc.nextInt();
+			System.out.println("b : ");
+			b = sc.nextInt();
+			
+			if(a<b) break;
+		}
+		int result = b - a;
+		System.out.println("b-a 의 값: "+result);
 		
 		
 	}
