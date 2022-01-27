@@ -4,6 +4,22 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Mission01 {
+	
+	//총점을 구현후 리턴하는 메소드
+	public static int getSum(int kor,int eng, int mat) {
+		int total = kor + eng + mat;
+		
+		return total;
+		
+	}
+	
+	
+	//평균을 구하고 리턴하는 메소드
+	public static int getAvg(int total) {
+		int avg = total / 3;
+		
+		return avg;
+	}
 
 	public static void main(String[] args) {
 		//1. 성적관리프로그램을 위한 국어, 영어, 수학 변수를 선언과 초기화, 출력
@@ -31,8 +47,10 @@ public class Mission01 {
 		System.out.println("이름 입력 : ");
 		String name = sc.nextLine();
 		
-		sum = kor + eng + mat;
-		avg = sum / 3;
+		//sum = kor + eng + mat;
+		sum = getSum(kor, eng, mat);
+		//avg = sum / 3;
+		avg = getAvg(getSum(kor, eng, mat));
 		
 		DecimalFormat form = new DecimalFormat("##.##");
 		
