@@ -65,9 +65,7 @@ public class ArrayExam01 {
 		while(true) {
 			System.out.print("입력 :");
 			String str = sc.nextLine();
-			if(str.equals("q")) {
-				break;
-			}
+			if(str.equals("q")) break;
 			arr[count++] = str;
 		}
 		
