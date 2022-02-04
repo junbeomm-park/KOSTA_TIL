@@ -6,9 +6,11 @@ public class hw1_3 {
 		int num = 5;
 		int count = 1;
 		
-		for(int i = 1; i <= num; i++) {
-			for(int j = 1; j <= num; j++) {
-				System.out.print(count++ + "\t");
+		for(int i = 0; i < num; i++) {
+			for(int j = 0; j < num; j++) {
+				count = 2*j+1;
+			
+				System.out.print(count + "\t");
 			}
 			System.out.println();
 		}
