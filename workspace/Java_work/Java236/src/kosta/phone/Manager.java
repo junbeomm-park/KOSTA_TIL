@@ -42,5 +42,4 @@ public class Manager {
 			System.out.println("찾을 수 없습니다.");
 		}
 	}
-
 }
