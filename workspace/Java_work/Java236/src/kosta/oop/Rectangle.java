@@ -3,11 +3,9 @@ package kosta.oop;
 public class Rectangle {
 	private int width;
 	private int height;
+	private int area;
 	
-	public void getArea() {
-		int area = width * height;
-		System.out.println(area);
-	}
+	
 	
 	public Rectangle() {
 		
@@ -17,6 +15,10 @@ public class Rectangle {
 		super();
 		this.width = width;
 		this.height = height;
+	}
+	
+	public void square() {
+		area = width * height;
 	}
 
 	public int getWidth() {
@@ -33,6 +35,14 @@ public class Rectangle {
 
 	public void setHeight(int height) {
 		this.height = height;
+	}
+
+	public int getArea() {
+		return area;
+	}
+
+	public void setArea(int area) {
+		this.area = area;
 	}
 	
 	

@@ -5,11 +5,11 @@ import kosta.oop.Rectangle;
 public class RectangleMain {
 
 	public static void main(String[] args) {
-		Rectangle r = new Rectangle();
+		Rectangle r = new Rectangle(10,20);
 		
-		r.setWidth(10);
-		r.setHeight(5);
-		r.getArea();
+		
+		r.square();
+		System.out.println("넓이 :"+r.getArea());
 		
 	}
 
