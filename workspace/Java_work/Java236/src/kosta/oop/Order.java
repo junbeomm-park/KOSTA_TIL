@@ -1,10 +1,10 @@
 package kosta.oop;
 
 public class Order {
-	int orderNo;
-	String productName;
-	int count;
-	int price;
+	private int orderNo;
+	private String productName;
+	private int count;
+	private int price;
 	
 	public Order() {
 		
@@ -25,4 +25,45 @@ public class Order {
 		System.out.println("가격 : "+price);
 		System.out.println("==================");
 	}
+
+
+	public int getOrderNo() {
+		return orderNo;
+	}
+
+
+	public void setOrderNo(int orderNo) {
+		this.orderNo = orderNo;
+	}
+
+
+	public String getProductName() {
+		return productName;
+	}
+
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+
+	public int getCount() {
+		return count;
+	}
+
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+
+	public int getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
 }
