@@ -1,15 +1,15 @@
 package kosta.video;
 
 public class Video {
-	int videoNo;
-	String title;
-	String actor;
+	private String videoNo;
+	private String title;
+	private String actor;
 	
 	public Video() {
 		
 	}
 	
-	public Video(int videoNo, String title, String actor) {
+	public Video(String videoNo, String title, String actor) {
 		super();
 		this.videoNo = videoNo;
 		this.title = title;
@@ -20,14 +20,13 @@ public class Video {
 		System.out.println("회원이 대여한 비디오 번호 : " + videoNo);
 		System.out.println("회원이 대여한 비디오 제목 : " + title);
 		System.out.println("회원이 대여한 비디오 주인공 : " + actor);
-		System.out.println("=============================");
 	}
 
-	public int getVideoNo() {
+	public String getVideoNo() {
 		return videoNo;
 	}
 
-	public void setVideoNo(int videoNo) {
+	public void setVideoNo(String videoNo) {
 		this.videoNo = videoNo;
 	}
 

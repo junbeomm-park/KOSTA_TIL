@@ -13,6 +13,7 @@ public class BaseBallGame {
 		int[] user = new int[3];
 		int count = 0;
 		
+		
 		//1. 중복되지 않는 1-9 난수 3개를 구한다. 
 		b.random();
 		for (int i = 0; i < ranarr.length; i++) {

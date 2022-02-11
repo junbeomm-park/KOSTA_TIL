@@ -6,6 +6,7 @@ public class BaseBall {
 	//난수를 추출, 스트라이크/볼 체크
 	int hidden[];
 	
+	
 	public BaseBall() {
 		hidden = new int[3];
 		hidden[0] = (int)(Math.random() * 9) + 1; // 1~9

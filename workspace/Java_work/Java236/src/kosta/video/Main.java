@@ -1,21 +1,32 @@
 package kosta.video;
 
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
-		GeneralMember m1 = new GeneralMember("aaa", "홍길동", "동탄");
-		GeneralMember m2 = new GeneralMember("bbb", "김철수", "서울");
-		Video v1 = new Video(1,"트랜스포머3","서봉수");
-		Video v2 = new Video(2,"쿵푸팬더2","지성민");
+//		Video v1 = new Video("1","경관의피","조진웅");
+//		Video v2 = new Video("2","기생충","송강호");
 		
-		m1.print();
-		v1.print();
+		Video videos[] = {
+				 new Video("1","경관의피","조진웅"),
+				 new Video("2","기생충","송강호")
+		};
 		
+		GeneralMember members[] = {
+				new GeneralMember("aaa","홍길동","가산"),
+				new GeneralMember("bbb","박길동","서울")
+		};
 		
-		m2.print();
-		v2.print();
-		
-		
+		Member m = new Member("3","김길동","동탄");
+		m.rentalVideo(videos[1]);
+//		for(int i = 0; i < members.length; i++) {
+//			members[i].setRental(videos[i]);
+//			members[i].print();
+//		}
+//		GeneralMember m = new GeneralMember("aaa","홍길동","가산");
+//		m.setRental(v1);
+//		m.print();
 	}
 
 }
