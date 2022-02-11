@@ -18,30 +18,23 @@ public class Main {
 		Transcript t3 = new Transcript(s2, c2, "2022", "B++");
 		
 		
-		List<Student> students = c1.getStudents(); //전산학개론을 응시한 사람의 전과목시험 결과
-		for(Student s : students) {
-			System.out.println(s.getName());
-			List<Transcript> transcripts = s.getTranscripts();
-			for(Transcript t : transcripts) {
-				System.out.println("과목명 : " + t.getCourse().getName());
-				System.out.println("날짜 : " + t.getDate());
-				System.out.println("학점 : " + t.getGrade());
-			}
+		//전산학개론을 응시한 시험 성적
+		System.out.println("과목명 : " + c1.getName());
+		for(Transcript t : c1.getTranscripts()) {
+			System.out.println("이름 : " + t.getStudent().getName());
+			System.out.println("날짜 : " + t.getDate());
+			System.out.println("학점 : " + t.getGrade());
 		}
 		
-		System.out.println("====================");
+		System.out.println("=================================");
 		
-		List<Course> courses = s1.getCourses();//홍길동이라는 사람의 시험 결과
-		for(Course c : courses) {
-			System.out.println("과목명 : "+c.getName());
-			List<Transcript> transcripts = c.getTranscripts();
-			for(Transcript t : transcripts) {
-				System.out.println("학생 : " + t.getStudent().getName());
-				System.out.println("날짜 : " + t.getDate());
-				System.out.println("학점 : " + t.getGrade());
-			}
+		//홍길동이 응시한 과목에 대한 전체 성적
+		System.out.println("이름 : " + s1.getName());
+		for(Transcript t : s1.getTranscripts()) {
+			System.out.println("과목명 : " + t.getCourse().getName());
+			System.out.println("날짜 : " + t.getDate());
+			System.out.println("학점 : " + t.getGrade());
 		}
-		
 		
 	}
 }
