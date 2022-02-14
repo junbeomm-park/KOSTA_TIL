@@ -4,18 +4,18 @@ import java.util.Scanner;
 
 public class Manager {
 	PhoneInfo[] arr = new PhoneInfo[3];
-	Scanner sc = new Scanner(System.in);
+	//Scanner sc = new Scanner(System.in);
 	int count = 0;
 	
 	public void addPhoneInfo() {
 		System.out.print("이름 :");
-		String name = sc.nextLine();
+		String name = DataInput.sc.nextLine();
 		
 		System.out.print("전화번호 :");
-		String phone_number = sc.nextLine();
+		String phone_number = DataInput.sc.nextLine();
 		
 		System.out.print("생년월일 :");
-		String birth = sc.nextLine();
+		String birth = DataInput.sc.nextLine();
 		
 		arr[count++] = new PhoneInfo(name, phone_number, birth);
 	}
@@ -28,7 +28,7 @@ public class Manager {
 	
 	public void searchPhonInfo() {
 		System.out.print("검색 :");
-		String name = sc.nextLine();
+		String name = DataInput.sc.nextLine();
 		int idx = -1;
 		
 		for(int i = 0; i < count; i++) {
@@ -45,12 +45,12 @@ public class Manager {
 	
 	public void updatePhoneInfo() {
 		System.out.print("수정할 이름 입력 :");
-		String name = sc.nextLine();
+		String name = DataInput.sc.nextLine();
 		
 		for(int i = 0; i < count; i++) {
 			if(name.equals(arr[i].getName())) {
 				System.out.print("전화 번호 수정 : ");
-				String update_number = sc.nextLine();
+				String update_number = DataInput.sc.nextLine();
 				
 				arr[i].setPhone_number(update_number);
 			}
@@ -59,7 +59,7 @@ public class Manager {
 	
 	public void deletePhoneInfo() {
 		System.out.print("삭제할 이름 입력 : ");
-		String name = sc.nextLine();
+		String name = DataInput.sc.nextLine();
 		int idx = -1;
 		
 		for(int i = 0; i < count; i++) {

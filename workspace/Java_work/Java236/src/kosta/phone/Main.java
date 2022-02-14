@@ -5,14 +5,15 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+		//Scanner sc = new Scanner(System.in);
+		
 		Manager m = new Manager();
 		PhoneInfo p[] = new PhoneInfo[3];
 		
 		while(true) {
 			System.out.println("1. 추가 2.전체출력 3.검색 4.수정 5. 삭제 6.종료");
 			System.out.print("메뉴선택 : ");
-			String menu = sc.nextLine();
+			String menu = DataInput.sc.nextLine();
 			
 			switch (menu) {
 			case "1":
