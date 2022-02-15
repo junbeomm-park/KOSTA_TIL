@@ -41,12 +41,16 @@ public class Main {
 		GeneralMember arr[] = {
 				new GeneralMember("aaa","홍길동","가산"),
 				new SpecialMember("2","박길동","강남",100)
+				
 		};
+		
 		
 		for(int i = 0; i < arr.length; i++) {
 			arr[i].setRental(videos[i]);
 			arr[i].show();
 		}
+		
+		
 		
 	}
 

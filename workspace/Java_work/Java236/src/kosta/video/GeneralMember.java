@@ -22,7 +22,6 @@ public class GeneralMember {
 		System.out.println("회원의 이름 :" + name);
 		System.out.println("회원의 주소 :" + address);
 		rental.print();
-		System.out.println("=============================");
 	}
 
 	public String getId() {
