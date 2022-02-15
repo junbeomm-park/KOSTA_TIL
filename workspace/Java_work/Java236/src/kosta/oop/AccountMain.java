@@ -6,11 +6,12 @@ public class AccountMain {
 		int arr[];
 		
 		//계좌번호, 계좌주, 잔액, 카드번호
-		CheckingAccount ca = new CheckingAccount("1111-1111", "홍길동", 5000, "222-222");
-		
+		new CheckingAccount();
+		//CheckingAccount ca = new CheckingAccount("1111-1111", "홍길동", 5000, "222-222");
+		Account ca = new CheckingAccount("1111-1111", "홍길동", 5000, "222-222");
 
 		try {
-			ca.pay("222-222", 1000);
+			//ca.pay("222-222", 1000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
