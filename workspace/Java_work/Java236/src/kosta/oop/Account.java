@@ -4,9 +4,9 @@ public class Account {
 	//(상태 : 계좌번호, 계좌주, 잔액 => 변수     기능 : 입금하다. 출금하다. => 메소드)
 	
 	//멤버 변수 = 필드(객체생성될때, 객체가 소멸) => 멤버 변수는 초기화를 안해줘도 된다
-	String accountNo; //계좌번호
-	String ownerName; //계좌주
-	int balance; //잔액
+	private String accountNo; //계좌번호
+	private String ownerName; //계좌주
+	private int balance; //잔액
 	
 	public Account() {
 		
@@ -49,6 +49,31 @@ public class Account {
 	
 		
 	}
+
+	public String getAccountNo() {
+		return accountNo;
+	}
+
+	public void setAccountNo(String accountNo) {
+		this.accountNo = accountNo;
+	}
+
+	public String getOwnerName() {
+		return ownerName;
+	}
+
+	public void setOwnerName(String ownerName) {
+		this.ownerName = ownerName;
+	}
+
+	public int getBalance() {
+		return balance;
+	}
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
 	
 
+	
 }

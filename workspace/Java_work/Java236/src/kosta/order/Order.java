@@ -1,8 +1,5 @@
 package kosta.order;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Order {
 	private int orderNo;
 	private String orderName;
