@@ -2,12 +2,19 @@ package kosta.phone;
 
 import java.util.Scanner;
 
-public class Manager {
+public class Manager extends PhoneInfo{
 	PhoneInfo[] arr = new PhoneInfo[3];
+	
+	//Company c = new Company();
+	//Universe u = new Universe();
 	//Scanner sc = new Scanner(System.in);
 	int count = 0;
 	
 	public void addPhoneInfo() {
+		System.out.println("1.일반 2.동창 3.직장");
+		System.out.print("선택 :");
+		String menu = DataInput.sc.nextLine();
+		
 		System.out.print("이름 :");
 		String name = DataInput.sc.nextLine();
 		
@@ -17,13 +24,73 @@ public class Manager {
 		System.out.print("생년월일 :");
 		String birth = DataInput.sc.nextLine();
 		
-		arr[count++] = new PhoneInfo(name, phone_number, birth);
+		switch (menu) {
+		case "1":
+			
+			arr[count++] = new PhoneInfo(name, phone_number, birth);
+			break;
+		case "2":
+			
+			System.out.print("전공 :");
+			String major = DataInput.sc.nextLine();
+			
+			System.out.print("학번 :");
+			String year = DataInput.sc.nextLine();
+			
+			arr[count++] = new Universe(name, phone_number, birth, major, year);
+			break;
+		case "3":
+			
+			System.out.print("부서명 : ");
+			String dept = DataInput.sc.nextLine();
+			
+			System.out.print("담당업무 : ");
+			String position = DataInput.sc.nextLine();
+			
+			arr[count++] = new  Company(name, phone_number, birth, dept, position);
+			break;
+		
+		}
+		
+		
 	}
 	
 	public void listPhoneInfo() {
-		for(int i = 0; i < count; i++) {
-			arr[i].print();
+		System.out.println("1.전체 2.동창 3.직장");
+		System.out.print("선택 :");
+		String menu = DataInput.sc.nextLine();
+		
+		switch (menu) {
+		case "1":
+			
+			for(int i = 0; i < count; i++) {
+				arr[i].print();
+			}
+			
+			break;
+			
+		case "2":
+			
+			for(int i = 0; i < count; i++) {
+				if(arr[i] instanceof Universe) {
+					arr[i].print();
+				}
+			}
+			break;
+			
+		case "3":
+			
+			for(int i = 0; i < count; i++) {
+				if(arr[i] instanceof Company) {
+					arr[i].print();
+				}
+			}
+			break;
+
+		
 		}
+		
+		
 	}
 	
 	public void searchPhonInfo() {

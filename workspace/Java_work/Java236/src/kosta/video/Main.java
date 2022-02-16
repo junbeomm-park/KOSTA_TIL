@@ -43,11 +43,17 @@ public class Main {
 				new SpecialMember("2","박길동","강남",100)
 				
 		};
+		GeneralMember gm = new SpecialMember();
+		SpecialMember sm = (SpecialMember)gm;
 		
 		
 		for(int i = 0; i < arr.length; i++) {
+			
 			arr[i].setRental(videos[i]);
 			arr[i].show();
+			sm.print();
+			
+			
 		}
 		
 		

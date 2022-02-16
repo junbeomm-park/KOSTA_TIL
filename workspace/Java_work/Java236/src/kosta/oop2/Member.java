@@ -1,15 +1,15 @@
 package kosta.oop2;
 
-public class Person {
+public class Member {
 	private String name;
 	private int age;
 	private String job;
 	
-	public Person() {
+	public Member() {
 		
 	}
 	
-	public Person(String name, int age, String job) {
+	public Member(String name, int age, String job) {
 		this.name = name;
 		this.age = age;
 		this.job = job;

@@ -11,7 +11,8 @@ public class AccountMain {
 		Account ca = new CheckingAccount("1111-1111", "홍길동", 5000, "222-222");
 
 		try {
-			//ca.pay("222-222", 1000);
+			CheckingAccount ca2 = (CheckingAccount)ca; 
+			ca2.pay("222-222", 1000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

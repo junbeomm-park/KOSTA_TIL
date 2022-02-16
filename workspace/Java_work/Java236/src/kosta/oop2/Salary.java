@@ -1,6 +1,6 @@
 package kosta.oop2;
 
-public class Salary extends Person {
+public class Salary extends Member {
 	private int pay;
 	
 	public Salary() {

@@ -26,6 +26,15 @@ public class MinusAccount extends Account {
 		
 		return amount;
 	}
+
+	public int getCreditLine() {
+		return creditLine;
+	}
+
+	public void setCreditLine(int creditLine) {
+		this.creditLine = creditLine;
+	}
+	
 	
 	
 }
