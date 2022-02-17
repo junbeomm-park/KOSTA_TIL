@@ -1,4 +1,4 @@
-package kosta.shoping;
+package kosta.shopping;
 
 public class Product {
 	private String foodName;

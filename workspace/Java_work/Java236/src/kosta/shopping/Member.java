@@ -1,4 +1,4 @@
-package kosta.shoping;
+package kosta.shopping;
 
 import java.util.ArrayList;
 import java.util.List;
