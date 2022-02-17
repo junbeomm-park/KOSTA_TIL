@@ -6,7 +6,13 @@ public class ServiceMain {
 		OracleDAO od = new OracleDAO();
 		MySqlDAO msd = new MySqlDAO();
 		
-		Service s = new Service(od);
+		Service s = new Service(new DAO() {
+			
+			@Override
+			public void insert() {
+				System.out.println("MSSQL 출력");
+			}
+		});
 		s.insertService();
 	}
 }
