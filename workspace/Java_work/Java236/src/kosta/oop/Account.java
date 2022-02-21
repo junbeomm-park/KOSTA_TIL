@@ -50,6 +50,27 @@ public class Account {
 		
 	}
 
+	@Override
+	public String toString() {
+		return "Account [accountNo=" + accountNo + ", ownerName=" + ownerName + ", balance=" + balance + "]";
+	}
+	
+	
+
+	@Override
+	public boolean equals(Object obj) {
+//		if(obj instanceof Account) {
+//			return this.getOwnerName() == ((Account)obj).getOwnerName();
+//		}else { 
+//			return false;
+//		}
+		if(ownerName.equals(((Account)obj).ownerName)){
+			return true;
+		}else {
+			return false;
+		}
+	}
+
 	public String getAccountNo() {
 		return accountNo;
 	}

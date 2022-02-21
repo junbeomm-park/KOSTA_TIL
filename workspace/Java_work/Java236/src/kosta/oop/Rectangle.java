@@ -10,6 +10,7 @@ public class Rectangle {
 	public Rectangle() {
 		
 	}
+	
 
 	public Rectangle(int width, int height) {
 		super();
@@ -19,6 +20,16 @@ public class Rectangle {
 	
 	public void square() {
 		area = width * height;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		
+		if(obj instanceof Rectangle) {
+			return this.area == ((Rectangle)obj).getArea();
+		}else {
+			return false;
+		}
 	}
 
 	public int getWidth() {
