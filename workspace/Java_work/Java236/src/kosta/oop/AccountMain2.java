@@ -4,7 +4,7 @@ public class AccountMain2 {
 	
 	public static void main(String[] args) {
 		Account account1 = new Account("111-111","홍길동",1000);
-		//System.out.println(account.toString()); //toString() 호출 => 없으면 부모클래스 Object 호출 : 주소값을 출력
+		//System.out.println(account1); //toString() 호출 => 없으면 부모클래스 Object 호출 : 주소값을 출력
 												//Account toString() 오버라이딩 = 자신 객체의 내용이 출력된다.
 		
 		Account account2 = new Account("222-222", "홍길동", 5000);
