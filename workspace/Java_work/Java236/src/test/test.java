@@ -1,30 +1,22 @@
 package test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 
 public class test {
 	
-	public String solution(String str) {
-		String answer = "";
-		char[] c = str.toCharArray();
-		for(int i = 0; i < str.length(); i++) {
-			int num = (int)c[i];
-			if(num >= 65 && num <= 90) {
-				answer += (char)(num+32);
-			}else if(num >= 97 && num <= 122) {
-				answer += (char)(num-32);
-			}
-		}
-		return answer;
-	}
-	
 	public static void main(String[] args) {
-		test t = new test();
-		Scanner sc = new Scanner(System.in);
-		String str = sc.nextLine();
-		System.out.println(t.solution(str));
+		LinkedList<Integer> stack = new LinkedList<Integer>();
+		stack.addLast(12);
+		stack.addLast(59);
+		stack.addLast(7);
 		
+		while(!stack.isEmpty()) {
+			int num = stack.removeLast();
+			System.out.println(num);
+		}
 	}
 }
