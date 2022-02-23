@@ -1,4 +1,4 @@
-package kosta.api;
+package kosta.data;
 
 import java.util.ArrayList;
 import java.util.Arrays;
