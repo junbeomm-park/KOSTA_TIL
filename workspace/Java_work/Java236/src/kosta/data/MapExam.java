@@ -3,6 +3,7 @@ package kosta.data;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class MapExam {
@@ -14,6 +15,7 @@ public class MapExam {
 		map.put("2", "두산");
 		map.put("3", "삼성");
 		
+		System.out.println(map);
 		System.out.println("요소의 사이즈 : " + map.size());
 		
 		if(map.containsValue("두산")) {
@@ -28,8 +30,10 @@ public class MapExam {
 		// key => keySet()
 		// value => values() : Collection
 		// (key, value) => entrySet()
-		Set set = map.entrySet();
-		Iterator iter = set.iterator();
+//		Set set = map.entrySet();
+//		Iterator iter = set.iterator();
+		
+		Iterator<Entry<String, String>> iter = map.entrySet().iterator();
 		
 		while(iter.hasNext()) {
 			Map.Entry<String, String> e = (Map.Entry<String, String>)iter.next();// (key, value)

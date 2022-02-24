@@ -1,6 +1,8 @@
 package kosta.phone;
 
-public class Company extends PhoneInfo {
+import java.io.Serializable;
+
+public class Company extends PhoneInfo implements Serializable{
 	private String dept; // 부서
 	private String position; // 담당업무
 	

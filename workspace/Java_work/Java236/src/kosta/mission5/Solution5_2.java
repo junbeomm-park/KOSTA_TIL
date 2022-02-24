@@ -10,10 +10,19 @@ public class Solution5_2 {
 		Stack<Character> stack = new Stack<Character>();
 		char[] arr = str.toCharArray();
 		
-		for(int i = 0 ; i < arr.length; i++) {
-			if(arr[i] == '(') {
-				stack.push('(');
+//		for(int i = 0 ; i < arr.length; i++) {
+//			if(arr[i] == '(') {
+//				stack.push('(');
+//			}else {
+//				stack.pop();
+//			}
+//		}
+		
+		for(char c : str.toCharArray()) {
+			if(c == '(') {
+				stack.push(c);
 			}else {
+				if(!stack.isEmpty()) return "YES";
 				stack.pop();
 			}
 		}

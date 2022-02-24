@@ -1,6 +1,8 @@
 package kosta.phone;
 
-public class PhoneInfo {
+import java.io.Serializable;
+
+public class PhoneInfo implements Serializable{
 	//상태 : 이름,전화번호,생년월일
 	//기능 : 전화번호부 출력
 	
@@ -26,7 +28,6 @@ public class PhoneInfo {
 		System.out.println("이름 : "+name);
 		System.out.println("전화번호 : "+phone_number);
 		System.out.println("생년월일 : "+birth);
-		System.out.println("==========================");
 	}
 
 

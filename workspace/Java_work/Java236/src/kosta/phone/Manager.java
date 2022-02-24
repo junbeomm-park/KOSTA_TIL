@@ -1,5 +1,10 @@
 package kosta.phone;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -175,6 +180,39 @@ public class Manager extends PhoneInfo {
 			}
 		});
 		System.out.println("이름 순으로 정렬 되었습니다.");
+	}
+	
+	public void save() {
+		ObjectOutputStream oos = null;
+		try {
+			oos = new ObjectOutputStream(new FileOutputStream("list.txt", true));
+			oos.writeObject(list);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				oos.close();
+			} catch (Exception e2) {}
+		}
+		
+		System.out.println("파일로 저장 되었습니다.");
+	}
+	
+	public void callList() {
+		ObjectInputStream ois = null;
+		
+		try {
+			ois = new ObjectInputStream(new FileInputStream("list.txt"));
+			list = (List<PhoneInfo>) ois.readObject();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				ois.close();
+			} catch (Exception e2) {}
+		}
+		
+		System.out.println("불러오기 완료");
 	}
 	
 }

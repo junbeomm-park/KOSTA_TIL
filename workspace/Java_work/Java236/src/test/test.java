@@ -8,15 +8,30 @@ import java.util.Scanner;
 
 public class test {
 	
-	public static void main(String[] args) {
-		LinkedList<Integer> stack = new LinkedList<Integer>();
-		stack.addLast(12);
-		stack.addLast(59);
-		stack.addLast(7);
-		
-		while(!stack.isEmpty()) {
-			int num = stack.removeLast();
-			System.out.println(num);
+	public void solution(String str) {
+		int arr[] = new int[26];
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = -1;
 		}
+		
+		
+		for(int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
+			
+			if(arr[ch - 'a'] == -1) {
+				arr[ch - 'a'] = i;
+			}
+		}
+		for(int val : arr) {
+			System.out.print(val + " ");
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		test t = new test();
+		Scanner sc = new Scanner(System.in);
+		String str = sc.next();
+		t.solution(str);
 	}
 }

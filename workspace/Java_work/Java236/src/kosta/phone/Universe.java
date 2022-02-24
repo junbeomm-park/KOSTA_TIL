@@ -1,6 +1,8 @@
 package kosta.phone;
 
-public class Universe extends PhoneInfo {
+import java.io.Serializable;
+
+public class Universe extends PhoneInfo implements Serializable{
 	private String major;
 	private String year;
 	
