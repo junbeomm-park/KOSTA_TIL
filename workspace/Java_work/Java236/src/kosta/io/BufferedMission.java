@@ -12,16 +12,22 @@ public class BufferedMission {
 		
 		BufferedReader br = null;
 		BufferedWriter bw = null;
+		char arr[] = new char[100];
 		
 		try {
 			br = new BufferedReader(new FileReader("output.txt"));
 			bw = new BufferedWriter(new FileWriter("copy.txt"));
 			
-			String str;
-			while((str = br.readLine()) != null) {
-				
-				bw.write(str);
-			}
+			br.read(arr);
+			bw.write(arr);
+			
+			System.out.println("복사완료");
+			
+//			String str;
+//			while((str = br.readLine()) != null) {
+//				
+//				bw.write(str);
+//			}
 					
 		
 			
