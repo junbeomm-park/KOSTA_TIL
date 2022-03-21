@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	p{
+		font-size: 20px;
+	}
+	
+	tr{
+		text-align: center;
+	}
+	
+	#b1{
+		font-size: 20px;
+		color: red;
+	}
+	#container{
+		padding-left : 900px;
+		margin:0 auto;
+	}
+</style>
+</head>
+<body>
+<div id="container">
+	<h1>HTML 1일차</h1>
+	
+	<h2>환경설정 (Eclipse, Tomcat 연동)</h2>
+	<ol>
+		<li>
+			<p>공유 폴더에 apache-tomcat-9.0.6 다운로드</p>
+		</li>
+		<li>
+			<p>내PC - 속성 - 고급 시스템 설정 - 환경변수에서 변수 설정</p>
+			<img alt="설정2" src="../images/설정2.png"><br><br><br>
+		</li>
+		<li>
+			<p>Eclipse 에서 Window - Preferences 클릭</p>
+			<img alt="설정1" src="../images/설정1.png"><br><br><br>
+		</li>
+		<li>
+			<p>Server - Add - Apach.Tomcat.9.0 선택 후 Finish</p>
+			<img alt="설정3" src="../images/설정3.PNG"><br><br><br>
+		</li>
+		<li>
+			<p>Servers 탭 - 마우스 우클릭 - New - Server - Finish</p>
+			<img alt="설정4" src="../images/설정4.PNG"><br><br><br>
+		</li>
+		<li>
+			<p>등록한 서버 더블 클릭 - HTTP 포트 8080 에서 8081로 변경</p>
+			<img alt="설정5" src="../images/설정5.PNG"><br><br><br>
+			<b id="b1">변경 이유 : Oracle에서 8080포트를 사용하기 때문에 추후 에러상황 회피 위함</b>
+		</li>
+	</ol>
+	<br><br><br>
+	
+	<h2>프로젝트 및 html 생성</h2>
+	<ol>
+		<li>
+			<p>New - Project - Web - Dynamic Web Project 클릭</p>
+			<img alt="프로젝트1" src="../images/프로젝트1.PNG">
+		</li>
+		<li>
+			<p>WebContent 폴더 밑에서 html file 생성</p>
+			<img alt="프로젝트2" src="../images/프로젝트2.png">
+		</li>
+	</ol>
+	<br><br><br>
+	
+	<h2>오늘 배운 html태그</h2>
+		<table border="1" width="800">
+			<thead>
+				<tr>
+					<th width="150">태그명</th>
+					<th>내용</th>
+					<th width="150">비고</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><p>doctype</p></td>
+					<td>문서 형식</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><p>html</p></td>
+					<td>웹 페이지의 시작과 끝</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><p>meta</p></td>
+					<td>문자 인코딩 및 문서 키워드, 요약정보</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><p>title</p></td>
+					<td>웹 페이지 제목</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><p>body</p></td>
+					<td>브라우저에 실제 표시되는 내용</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><p>h1 ~ h6</p></td>
+					<td>문서에서 제목을 정의</td>
+					<td>block 요소</td>
+				</tr>
+				<tr>
+					<td><p>div</p></td>
+					<td>특정 영역, 그룹화 할 때 쓰임 = layout</td>
+					<td>block 요소</td>
+				</tr>
+				<tr>
+					<td><p>p</p></td>
+					<td>단락</td>
+					<td>block 요소</td>
+				</tr>
+				<tr>
+					<td><p>a</p></td>
+					<td>하나의 페이지에서 다른 페이지를 연결, 하이퍼링크를 정의할 때 사용</td>
+					<td>p태그와 혼동X<br>
+						inline 요소</td>
+				</tr>
+				<tr>
+					<td><p>br</p></td>
+					<td>줄바꿈</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><p>ul</p></td>
+					<td>순서가 없는 list</td>
+					<td>디폴트로 ● 붙음</td>
+				</tr>
+				<tr>
+					<td><p>ol</p></td>
+					<td>순서가 있는 list</td>
+					<td>디폴트로 숫자 1부터 속성 값으로 알파벳, 원하는 숫자부터 가능</td>
+				</tr>
+				<tr>
+					<td><p>li</p></td>
+					<td>ul 과 ol 안에서 각 항목을 나열할때 쓰임</td>
+					<td>block 요소</td>
+				</tr>
+				<tr>
+					<td><p>table</p></td>
+					<td>셀들의 행과 열로 구성된 2차원 테이블을 정의</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><p>thead</p></td>
+					<td>테이블에서 헤더 컨텐츠들을 하나의 그룹으로 묶을때 사용</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><p>tbody</p></td>
+					<td>테이블에서 내용 컨텐츠들을 하나의 그룹을 묶을때 사용</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><p>tr</p></td>
+					<td>테이블에서 셀들로 이루어진 하나의 행</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><p>th</p></td>
+					<td>테이블에서 제목이 되는 헤더 셀</td>
+					<td>thead태그 내부에서 사용</td>
+				</tr>
+				<tr>
+					<td><p>td</p></td>
+					<td>테이블에서 하나의 데이터 셀</td>
+					<td>tbody태그 내부에서 사용</td>
+				</tr>
+				<tr>
+					<td><p>input</p></td>
+					<td>사용자로부터 입력을 받을 수 있는 입력 필드</td>
+					<td>form태그 내부에서 사용됨</td>
+				</tr>
+				<tr>
+					<td><p>form</p></td>
+					<td>사용자로부터 입력을 받을 수 있는 HTML 입력 폼</td>
+					<td>HTML에서 유일하게 기능역할 하는 태그</td>
+				</tr>
+				
+			</tbody>
+		</table>
+		
+		<h3>태그의 속성</h3>
+		<table border="1" width="800">
+			<thead>
+				<tr>
+					<th width="150">태그명</th>
+					<th width="325">속성</th>
+					<th>속성값</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td rowspan="7"><p>input</p></td>
+					<td><p>type</p></td>
+					<td>text, email, date, checkbox, radio, file, submit, reset ...등등</td>
+				</tr>
+				<tr>
+					<td><p>name</p></td>
+					<td>사용자 정의</td>
+				</tr>
+				<tr>
+					<td><p>id</p></td>
+					<td>사용자 정의</td>
+				</tr>
+				<tr>
+					<td><p>autofocus</p></td>
+					<td>autofocus</td>
+				</tr>
+				<tr>
+					<td><p>placeholder</p></td>
+					<td>사용자 정의</td>
+				</tr>
+				<tr>
+					<td><p>required</p></td>
+					<td>required</td>
+				</tr>
+				<tr>
+					<td><p>value</p></td>
+					<td>사용자 정의</td>
+				</tr>
+				<tr>
+					<td rowspan="2">form</td>
+					<td><p>action</p></td>
+					<td>사용자 정의</td>
+				</tr>
+				<tr>
+					<td><p>method</p></td>
+					<td>get, post</td>
+				</tr>
+			</tbody>
+		</table><br><br><br>
+		
+		<h2>오늘 미션 복습</h2>
+			<ul>
+				<li>
+					<label style="font-size: 20px; font-style: oblique;">태그, p태그, 목록 태그 이용하기</label>
+					<h3>수습 국원 모집</h3>
+					
+					<h4>방송에 관심 있는 새내기 여러분 환영합니다.</h4>
+					<p>교내 방송국에서 신입생을 대상으로 수습 국원을 모집합니다. 학부나 전공에 상관없습니다 <br>평소 방송에 관심 있었던 여러 학우들의 지원바랍니다.</p>
+						
+					<ul>
+						<li><b>모집 기간 : </b>3월 2일 ~ 3월 11일</li>
+						<li><b>모집 분야 : </b>아나운서, pd, 엔지니어</li>
+						<li><b>지원 방법 : </b>양식 작성 후 이메일 접수</li>
+						<li style="display: inline; font-style: italic;">지원서 양식은 교내 방송국 홈페이지 공지 게시판에 있습니다.</li>
+					</ul>
+					
+					<h3>혜택</h3>	
+					<ol type="a">
+						<li>수습기간 활동 중 소정의 활동비 지급</li>
+						<li>정기자로 진급하면 장학금 지급</li>
+					</ol>
+				</li>
+				<br><br><br>
+				<li>
+					<label style="font-size: 20px; font-style: oblique;">table태그 및 속성 이용하기</label>
+					<table width="450" border="1">
+						<thead>
+							<tr height="50" align="center">
+								<th rowspan="2">날짜</th>
+								<th colspan="3">메뉴</th>
+								<th rowspan="2">비고</th>
+							</tr>
+							<tr height="50" align="center">
+								<td>아침</td>
+								<td>점심</td>
+								<td>저녁</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr height="50" align="center">
+								<td>21일</td>
+								<td>미역국</td>
+								<td>제육볶음</td>
+								<td>돼지갈비</td>
+								<td></td>
+							</tr>
+							<tr height="50" align="center">
+								<td>22일</td>
+								<td>된장국</td>
+								<td>오징어볶음</td>
+								<td>삼겹살</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</li>
+				<br><br><br>
+				<li>
+					<label style="font-size: 20px; font-style: oblique;">form 태그 이용하기</label>
+						<form>
+							<h3>개인정보</h3>
+							<ul>
+								<li>
+									<label>이름</label>
+									<input type="text" placeholder="공백없이 입력하세요.">
+								</li>
+								<li>
+									<label>연락처</label>
+									<input type="text">
+								</li>
+							</ul>
+							
+							<h3>지원 분야</h3>
+							<ul>
+								<li>
+									
+									<input type="radio" name="job" value="publishing"> 웹 퍼블리싱<br>
+									<input type="radio" name="job" value="developer"> 웹 어플리케이션 개발<br>
+									<input type="radio" name="job" value="update"> 개발 환경 개선
+								</li>
+							</ul>
+							
+							<h3>지원동기</h3>
+							<textarea rows="5" cols="60" placeholder="본서 지원 동기를 간략히 써주세요"></textarea> <br>
+							
+							<input type="submit" value="접수하기"><input type="reset" value="다시 쓰기">
+							
+			
+						</form>
+						
+				</li>
+			</ul>
+			<a href="#top">맨위로 가기</a>
+</div>
+</body>
+</html>
