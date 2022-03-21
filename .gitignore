@@ -13,6 +13,8 @@ local.properties
 target/
 META-INF/
 Servers/
+.classpath
+.project
 
 # External tool builders
 .externalToolBuilders/
