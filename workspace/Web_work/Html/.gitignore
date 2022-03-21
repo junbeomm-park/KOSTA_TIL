@@ -10,8 +10,8 @@ local.properties
 .loadpath
 .recommenders
 .DS_Store
-target/*
-META-INF/*
+target/
+META-INF/
 
 # External tool builders
 .externalToolBuilders/
