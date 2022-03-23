@@ -1,0 +1,202 @@
+@charset "UTF-8";
+
+#wrapper{
+	background: url("../images/common/wrap_bg.jpg")no-repeat top center;
+}
+
+#header{
+	background: url("../images/common/bg_menubox.png")no-repeat top center;
+	width: 940px;
+	height: 105px;
+	
+}
+
+#infoMenu{
+	text-align: right;
+	margin-right: 80px;
+	margin-bottom: 10px;
+}
+
+#infoMenu li{
+	display: inline;
+	padding: 0px 3px 0px 8px;
+	border-left: 1px dotted gray;
+}
+
+.logo{
+	position: absolute;
+	top: 32px;
+	left: 30px;
+}
+
+#navigation{
+	background: url("../images/common/sitemenu_bg.gif")no-repeat 0 0;
+	width: 842px;
+	height: 43px;
+	margin-left: 45px;
+}
+
+#navigation li{
+	float: left;
+}
+
+#navigation li.first{
+	margin-left: 217px;
+	
+}
+
+#naviSub01{
+	position: absolute;
+	top: 77px;
+}
+
+#contents{
+	background: url("../images/common/contents_box.png")no-repeat 0 0;
+	width: 940px;
+	height: 400px;
+	margin-left: 30px;
+}
+
+#subWrap{
+	width: 190px;
+	height: 200px;
+	background: url("../images/common/subwrap_bg.gif")no-repeat 0 0;
+	float: left;
+	padding: 30px;
+}
+
+#subWrap h2{
+	padding: 10px;
+	border-bottom: 5px solid;
+	border-color: orange;
+}
+#subWrap > ul li{
+	border-bottom: 1px solid;
+	border-color: orange;
+	padding: 10px;
+}
+
+#subWrap > ul li.select{
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#subWrap > ul li.select a{
+	color: orange;
+}
+
+#contentsWrap{
+	width: 620px;
+	float: left;
+}
+
+#quick{
+	width: 50px;
+	height: 250px;
+	float: right;
+	background: url("../images/common/quick_bg.gif")no-repeat 0 0;
+	
+}
+
+#quick ul{
+	padding: 5px;
+	
+}
+
+#quick ul > li{
+	padding: 3px;
+}
+
+.search{
+	margin-top: 50px;
+	
+}
+
+.btnSearch{
+	float: right;
+}
+
+.depth{
+	float: right;
+	padding: 40px;
+	font-size: 13px;
+	color: gray;
+}
+
+#contentsWrap img{
+	padding: 20px;
+	margin-top: 20px;
+}
+
+#contentsArea{
+	border-top: 2px dotted;
+	padding: 20px;
+	border-color: #efefef;
+}
+
+#slogan{
+	position: relative;
+}
+.sloganImg{
+	float: left;
+}
+
+.sloganCon{
+	font-size: 14px;
+	color: #949285;
+	float: left;
+}
+
+.name{
+	color: red;
+}
+
+#footer{
+	clear: both;
+}
+
+.guideMenu {
+	list-style: none;
+	margin-left: 120px;
+	
+}
+
+
+.guideMenu li{
+	margin: 0 auto;
+	border-radius: 10px;
+}
+
+.guideMenu li a{
+	width: 135px;
+	height: 15px;
+	float: left;
+	padding: 10px;
+	background-color: gray;
+	color: white;
+	font-weight: bold;
+	
+}
+
+.footerLogo{
+	bottom: 320px;
+	position: absolute;
+}
+
+address{
+	clear: both;
+	margin-left: 120px;
+	padding-top: 50px;
+}
+
+.footerInner{
+	margin-top: 50px;
+}
+
+
+
+
+
+
+
+
