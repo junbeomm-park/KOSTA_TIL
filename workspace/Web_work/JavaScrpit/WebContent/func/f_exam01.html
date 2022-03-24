@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	//선언적 함수 : 함수정의
+	function add(a,b) {
+		var sum = a+b;
+		return sum;
+	}
+	
+	//익명함수 : 함수를 변수에 넣을 수 있다.
+	var add2 = function(a,b) {
+		var sum = a*b;
+		return sum;
+	}
+	
+	
+	//함수호출(사용)
+	console.log("add : " + add(10,20));
+	console.log(typeof add2);
+	console.log("add2 : " + add2(20,5));
+	
+	var plus = add; // add : 함수의 주소값 => plus도 함수가 된다.
+	console.log("plus : " + plus(20,50));
+	
+	var plus2 = add(10, 40); // 함수를 호출한 결과값을 리턴
+	console.log("plus2 : " + plus2)
+	
+	//함수의 인자에 함수를 전달 할 수 있다.
+	var foo = function(func){
+		if(typeof func == 'function'){
+			func(); //함수를 호출
+		}
+	}
+	
+	//foo함수를 호출하는 예제를 만들기
+/* 	foo(function() {
+		console.log('파라미터에 함수를 호출하는 예제');
+	}) */
+	
+	//함수 안에서 함수를 리턴하여 리턴된 함수를 호출하는 예제
+	var foo2 = function(){
+		return function() {
+			console.log('함수를 리턴하는 예제');
+		}
+	}
+	
+	//var baz = foo2();
+	//baz(); 
+	//foo2()();
+	
+	function call(mode){
+		var funcs = {
+			'plus' : function(left, right){return left + right},
+			'minus' : function(left, right){return left - right}
+		}
+		return funcs[mode];
+		
+	}
+	
+	//var aa = call('plus');
+	//console.log("call('plus') : " + aa(2,1));
+	
+	console.log("call('minus') : " + call('minus')(2,1));
+	
+	var arrays = [
+		function(input){return input + 10},
+		function(input){return input * 5},
+		function(input){return input / 2}
+	];
+	
+	var input = 0;
+	for(var i = 0; i < arrays.length; i++){
+		input = arrays[i](input);
+	}
+	
+	console.log(input);
+	
+	//콜백함수(함수의 파라미터에 함수를 전달)
+	function sortNumber(a,b){
+		return b-a;
+	}
+	
+	var arr = [33,12,45,43,13,45,32];
+	
+	console.log(arr.sort(sortNumber));
+	
+	
+	//즉시실행함수 : 함수 정의와 동시에 호출
+	var re = (function(){
+		return "즉시실행 함수 결과";
+	})();
+	
+	console.log("re : " + re);
+	
+	
+		
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

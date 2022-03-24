@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//ECMA Script 6
+	//let, const, var => 비교
+	
+/* 	console.log("============ var,let,const 비교 ============");
+	
+ 	var variableA = 50;
+	
+	let variableB = 100; //기존변수와 같이 사용
+	variableB = 150;
+	
+	const constantC = 200;
+	//constantC = 300; //error 발생
+	
+	console.log(variableB);
+	console.log(constantC);  */
+	
+/* 	console.log("============ scope =============");
+	
+	{
+		//scope A
+		var variableA = 100;
+		let variableB = 200;
+		
+	}
+	
+	{
+		//scope B
+		console.log(variableA); //출력가능
+		//console.log(variableB); //error
+	}
+	
+	//전역 scope
+	console.log(variableA); //출력 가능
+	console.log(variableB); //error */
+	
+	//여러 큰 스코프에서 공유하기 위한 최상위 변수에는 var를 사용
+	//작은 스코프의 로컬변수에는 let 사용
+	//기본적으로 const를 사용하고 값을 재할당해야 하는 경우 let 사용
+	
+/* 	for(var i = 0; i < 10; i++){
+		var leak = "for문 안에 변수";
+	}
+	
+	console.log(leak); */
+	
+/* 	let x = "global";
+	
+	if(x == "global"){
+		let x = "block=scope";
+		console.log(x);
+	}
+	
+	console.log(x); */
+	
+	var x = "global";
+	
+	if(x == "global"){
+		var x = "block=scope";
+		console.log(x);
+	}
+	
+	console.log(x);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

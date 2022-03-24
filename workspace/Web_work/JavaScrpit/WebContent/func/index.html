@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="reply.js"></script>
+<script type="text/javascript">
+
+	function showList(){
+		var param = "100";
+		
+		replyService.getList(param, function(data){
+			console.log("data : " + data);
+		});
+	}
+	
+	showList();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

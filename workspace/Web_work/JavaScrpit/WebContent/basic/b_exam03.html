@@ -65,7 +65,7 @@
 	function myFun(){
 		var myVar = "지역변수";
 		console.log("지역변수 : " + myVar);
-		console.log("전역변수 : " + window.myVar);
+		console.log("전역변수 : " + this.myVar); //일반함수 안에서의 this는 window객체를 가르킨다.
 	}
 	
 	myFun();
