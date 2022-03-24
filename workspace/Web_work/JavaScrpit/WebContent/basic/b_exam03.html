@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* JavaScript 자료형*/
+	
+	//숫자형(number)
+	var intNum = 10;
+	var floatNum = 3.14;
+	
+	console.log(typeof intNum); //number
+	console.log(typeof floatNum); //number
+	
+	//문자형(string)
+	var sinS = 'single';
+	var doubleS = 'double';
+	
+	console.log(typeof sinS); //string
+	console.log(typeof doubleS); //string
+	
+	//논리형(boolean)
+	var boolVar = true;
+	
+	console.log(typeof boolVar) //boolean
+	
+	//undefined
+	var emptyVar;
+	
+	console.log(typeof emptyVar);
+	
+	//null => object
+	var nullVar = null;
+	
+	console.log(typeof nullVar);
+	
+	//함수(function)
+	var fun = function(){}
+	
+	console.log(typeof fun);
+	
+	//형변환
+	intNum = '문자열';
+	console.log(typeof intNum); //string
+	
+	//문자열 => 정수형 : eval(), paserInt(), Number()
+	var num = '15안녕';
+	num = parseInt(num);
+	var num2 = num + 10;
+	
+	console.log(num2);
+	console.log(typeof num2);
+	
+	var num3 = '15';
+	
+	if(num3 == 15){
+		console.log("같다");
+	}else{
+		console.log("다르다");
+	}
+	
+	var myVar = "전역변수";
+	
+	function myFun(){
+		var myVar = "지역변수";
+		console.log("지역변수 : " + myVar);
+		console.log("전역변수 : " + window.myVar);
+	}
+	
+	myFun();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
