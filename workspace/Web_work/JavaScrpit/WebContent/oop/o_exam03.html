@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function student(name, kor, eng, mat){
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.mat = mat;
+	}
+	
+/* 	student.prototype.getSum = function(){}
+	student.prototype.getAverage = function(){}
+	student.prototype.toString = function(){} */
+	
+	student.prototype = {
+			getSum : function(){
+				return this.kor + this.eng + this.mat;
+			},
+			getAverage : function(){
+				return this.getSum()/3;
+			},
+			toString : function(){
+				return this.name + "\t" + this.kor + "\t" + this.eng + "\t" +
+				this.mat + "\t" + this.getSum() + "\t" + this.getAverage();
+			}
+	}
+	
+	var students = [];
+	students.push(new student("홍길동", 90, 80, 70));
+	students.push(new student("박길동", 30, 40, 50));
+	
+	for(var i in students){
+		document.write(students[i].toString() + "<br>");
+	}
+	
+	//과제 > Rectangle 생성자 함수를 만들고 사각형 넓이를 구해라
+	//		생성자 함수를 통해서 객체를 생성 후 해당 함수를 호출하여 출력
+	
+/* 	function Rectangle(width, height){
+		this.width = width;
+		this.height = height;
+	}
+	
+	Rectangle.prototype = {
+			getArea : function(){
+				return (this.width * this.height);
+			}
+	}
+	
+	var rectangle = new Rectangle(5, 7);
+	console.log(rectangle.getArea()); */
+	
+	
+	//정보은닉(캡술화) 자바 : private 선언 => set,get 메소드로 접근
+/* 	function Rectangle(w, h){
+		var width = w;
+		var height = h;
+		
+		this.setWidth = function(w){
+			width = w;
+		}
+		this.getWidth = function(){
+			return width;
+		}
+		this.setHeight = function(h){
+			height = h;
+		}
+		this.getHeight = function(){
+			return height;
+		}
+	}
+	
+	Rectangle.prototype.getArea = function() {
+		return this.getWidth() * this.getHeight();
+	}
+	
+	var rectangle = new Rectangle(5, 7);
+	console.log(rectangle.getWidth());
+	console.log(rectangle.getArea()); */
+	
+	// ES6 => 자바스크립트 상속
+	class Rectangle{
+		constructor(w, h)
+		{
+			this.width = w;
+			this.height = h;
+		};
+		
+		setWidth(w){
+			this.width = w;
+		};
+		getWidth(){
+			return this.width;
+		};
+		setHeight(h){
+			this.height = h;
+		};
+		getHeight(){
+			return this.height;
+		};
+		
+		getArea(){
+			return this.getWidth() * this.getHeight();
+		}
+	}
+	
+	/* var rectangle2 = new Rectangle(5, 7);
+	rectangle2.setWidth(10);
+	console.log(rectangle2.getArea()); */
+	
+	class Square extends Rectangle{
+		constructor(length)
+		{
+			super(length, length);
+		}
+	}
+	
+	var square = new Square(10);
+	console.log(square.getArea());
+	
+	//과제> 이전에 구현한 phoneInfo => Prototype 으로
+	
+	function phoneInfo(name,phoneNo,birth){
+		this.name = name;
+		this.phoneNo = phoneNo;
+		this.birth = birth;
+	}
+	
+	phoneInfo.prototype = {
+			display : function(){
+				console.log("이름 : " + this.name + " 전화번호 : " + this.phoneNo + " 생년월일 : " + this.birth) 
+			}
+	}
+	
+	var info = new phoneInfo("홍길동", "111-111", "010101");
+	
+	info.display();
+	
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

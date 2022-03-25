@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	//3. 생성자 함수를 이용한 객체 생성 => 다수의 객체를 생성시
+	
+	function grade(kor, eng, mat) { //생성자 함수 => 객체가 생성 될때 호출
+		this.kor = kor;
+		this.eng = eng;
+		this.mat = mat;
+	}
+
+	function student(name, grade){ //생성자 함수 => 객체가 생성 될때 호출
+		this.name = name;
+		this.grade = grade;
+		this.getSum = function(){
+			return this.grade.kor + this.grade.eng + this.grade.mat;
+		}
+		this.getAverage = function(){
+			return this.getSum()/3;
+		}
+		this.toString = function(){
+			return this.name + "\t" + this.grade.kor + "\t" + this.grade.eng + "\t" +
+					this.grade.mat + "\t" + this.getSum() + "\t" + this.getAverage();
+		}
+	}
+	
+	var students = [];
+	students.push(new student("홍길동", new grade(90,80,70)));
+	students.push(new student("박길동", new grade(30,40,50)));
+	
+	for(var i in students){
+		document.write(students[i].toString() + "<br>");
+	}
+	
+	var fruits = ["apple","banana","orange"];
+	
+	/* for(var i = 0; i < fruits.length; i++){
+		console.log(fruits[i]);
+	} */
+	
+	//for in => 변수 : 인덱스
+	for(var i in fruits){
+		console.log(fruits[i]);
+	}
+	
+	//for of => 변수 : 값
+	for(var fruit of fruits){
+		console.log(fruit)
+	}
+	
+	//forEach
+	fruits.forEach(function(fruit) {
+		console.log(fruit);
+	})
+	
+	const car = {
+		maker : 'BMW',
+		color : 'red',
+		year : '2022'
+	}
+	
+	for(const prop in car){
+		console.log(prop, car[prop]);
+	}
+	
+	for(const prop of Object.keys(car)){
+		console.log(prop, car[prop]);
+	}
+	
+	//phonInfo
+	//name,phoneNo,birth, display()
+	//1.리터럴
+	//2.생성자 함수 (배열에 넣어서)
+	
+	function phoneInfo(name,phoneNo,birth) {
+		this.name = name;
+		this.phoneNo = phoneNo;
+		this.birth = birth;
+		this.display = function(){
+			return this.name + "\t" + this.phoneNo + "\t" + this.birth
+		}
+	}
+	
+	var infos = [];
+	infos.push(new phoneInfo("홍길동","111-111","010101"))
+	infos.push(new phoneInfo("박길동","222-111","020202"))
+	infos.push(new phoneInfo("이길동","333-333","030303"))
+	infos.push(new phoneInfo("조길동","444-444","040404"))
+	infos.push(new phoneInfo("황길동","555-555","050505"))
+	
+	document.write("===================<br>");
+	document.write("phoneInfo 예제<br>");
+	
+	for(var i in infos){
+		document.write("=====================<br>");
+		document.write(infos[i].display()+"<br>");
+	}
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
