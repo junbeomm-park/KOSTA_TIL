@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//함수의 실행 컨텍스트 영역
+/* 	var var1 = 10;
+	
+	function func() {
+		var var1 = 20;
+		console.log("var1 : " + var1);
+	}
+	
+	func(); */
+
+/* 	var value = "value1";
+	
+	function printFunc(){
+		var value = "value2";
+		
+		function printValue(){
+			return value;
+		}
+		
+		console.log(printValue());
+	}
+	
+	printFunc(); */
+	
+/* 	var value = "value1";
+	
+	function printValue(){
+		return value;
+	}
+	
+	function printFunc(func){
+		var value = "value2";
+		
+		console.log(func());
+	}
+	
+	printFunc(printValue); */
+	
+	//함수 클로저
+/* 	function outerFunc(){
+		var x = 10;
+		var innerFunc = function(){
+			console.log(x);
+		}
+		
+		return innerFunc;
+	}
+	
+	var inner = outerFunc();
+	inner(); */
+	
+/* 	function outer(arg1, arg2){
+		var local = 8;
+		
+		function inner(innerArg){
+			console.log((arg1+arg2) / (local+innerArg));
+		}
+		
+		return inner;
+	}
+	
+	var test = outer(10, 20);
+	test(20); */
+	
+	function factory_movie(title){
+		return{
+			get_title : function(){
+				return title;
+			},
+			set_title : function(_title){
+				title = _title;
+			}
+		}
+	}
+	
+	movie1 = factory_movie('인질'); //'인질'
+	movie2 = factory_movie('싱크홀'); //'싱크홀'
+	
+	console.log(movie1.get_title());
+	console.log(movie2.get_title());
+	
+	movie1.set_title('반도');
+	
+	console.log(movie1.get_title());
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
