@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	//ES6 Array
+	
+	//Array.of() : 전달받은 모든 일수로 배열을 생성
+	const digits = Array.of(1,2,3,4,5);
+	console.log(digits);
+	
+	//Array.find() : 함수를 충족하는 배열의 첫 번째 요소를 반환, 없으면 => undefined
+	/* const array = [1,2,3,4,5];
+	let found = array.find(e => e > 3);
+	console.log(found); */
+	
+	//Array.some() => 조건에 맞는 것이 하나라도 있으면 => true
+	//Array.every() => 모든 조건이 충족하면 => true
+	const array = [1,2,3,4,5,2,4,1,9];
+	let arraySome = array.some(e => e > 2);
+	console.log(arraySome);
+	
+	let arrayEvery = array.every(e => e > 2);
+	console.log(arrayEvery);
+	
+	//spread operator -> 배열복사
+	/* let pre = ['apple', 'orange', 100];
+	let newData = [...pre];
+	console.log(pre, newData); */
+	
+	/* let pre = ['apple','orange',100,null];
+	let newData = [1,2,3, ...pre,4];
+	console.log(pre, newData); */
+	
+	let pre = [100,200,300];
+	
+	function sum(a, b , c){
+		return a + b + c;
+	}
+	
+	console.log(sum(...pre));
+	
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

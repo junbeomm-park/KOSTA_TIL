@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="crossEvent.js"></script>
+<script type="text/javascript">
+	
+	function doProcess(){ // 이벤트 핸들러 함수
+		var result = document.getElementById("result");
+		result.innerHTML = "<span>이벤트결과1</span>";
+	}
+	
+	function doProcess2(){
+		alert("이벤트결과2");
+	}
+	
+	window.onload = function(){ // 문서를 파싱 후 호출하는 이벤트
+		var btn = document.getElementById("btn");
+		//btn.onclick = doProcess2;
+		//btn.onclick = doProcess;
+		
+		//btn.addEventListener('click', doProcess, false);
+		//btn.addEventListener('click', doProcess2, false);
+		
+		cross.Event.addListener(btn, "click", doProcess, false);
+		cross.Event.addListener(btn, "click", doProcess2, false);
+	}
+
+</script>
+</head>
+<body>
+	<input type="button" value="버튼1" onclick="doProcess()">&nbsp;&nbsp;
+	<input type="button" value="버튼2" id="btn">
+	<div id="result"></div>
+</body>
+</html>
