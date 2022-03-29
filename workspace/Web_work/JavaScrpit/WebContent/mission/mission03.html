@@ -11,7 +11,21 @@
 	// 이벤트핸들러함수(){ this.value } this : 이벤트 대상
 	
 	var calculate = {
-			
+			num1 : 0,
+			num2 :0,
+			sum : 0,
+			cals : function(){ //이벤트 핸들러 함수 (this => 이벤트 대상)
+				num1 = parseInt(document.fmt.f1.value);
+				num2 = parseInt(document.fmt.f2.value);
+				var opt = this.value // + or -
+				
+				if(opt == '+'){
+					sum = num1 + num2;
+				}else{
+					sum = num1 - num2
+				}
+				document.fmt.result.value = sum;
+			}
 	};
 	
 	function plusFunc(){
@@ -25,8 +39,8 @@
 		var plus = document.getElementById("plus");
 		var minus = document.getElementById("minus");
 		
-		plus.addEventListener('click', plusFunc, false);
-		minus.addEventListener('click', minusFunc, false);
+		plus.onclick = calculate.cals;
+		minus.onclick = calculate.cals;
 		
 	}	
 	

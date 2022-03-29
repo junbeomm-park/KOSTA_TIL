@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	//일반 함수 안에서 this는 window객체이다.
+	var data = 10;
+	
+	function fun(){
+		this.data = 20;
+		data = 30;
+		
+		console.log("1. data : " + data);
+		console.log("2. this.data : " + this.data);
+		console.log("3. window.data : " + window.data);
+	}
+	
+	fun();
+</script>
+</head>
+<body>
+
+</body>
+</html>

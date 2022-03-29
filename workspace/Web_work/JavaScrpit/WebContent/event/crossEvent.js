@@ -10,3 +10,12 @@ cross.Event.addListener = function(element, name, handler, capture){
 		element.attachEvent('on'+name, handler);
 	}
 }
+
+
+cross.Event.stopBubble = function(event){
+	if(event.stopPropagation){ //표준 브라우저
+		event.stopPropagation();
+	}else{ //구형IE
+		event.cancelBubble = true;
+	}
+}
