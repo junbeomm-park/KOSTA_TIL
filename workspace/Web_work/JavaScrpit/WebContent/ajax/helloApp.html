@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="httpRequest.js"></script>
+<script type="text/javascript">
+
+	function hello(){
+		//http:\\www.naver.com?name=홍길동
+		var params = "name=" + encodeURIComponent(document.fmt.name.value); 
+		sendRequest("hello.jsp", params, helloRequest, "GET");
+	}
+	
+	//서버로부터 데이터값이 도착할때 호출되는 함수
+	function helloRequest(){
+		//text, json, xml => HTML 변환
+		if(httpRequest.readyState == 4){
+			if(httpRequest.status == 200){
+				alert("서버 응답 : " + httpRequest.responseText);
+			}
+		}
+	}
+
+</script>
+</head>
+<body>
+	<form name="fmt">
+		<input type="text" name="name"/>
+		<input type="button" value="전송" onclick="hello()"/>
+	</form>
+</body>
+</html>
