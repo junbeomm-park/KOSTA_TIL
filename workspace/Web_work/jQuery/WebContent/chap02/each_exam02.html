@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	$(function(){
+		var array = [
+			{name : 'Kosta' , link : 'http://kosta.or.kr'},
+			{name : 'Naver' , link : 'http://naver.com'},
+			{name : 'Daum' , link : 'http://daum.net'},
+		];
+		
+		var output = "";
+		$.each(array, function(index, item){
+			//var output = "";
+			
+			output += '<a href="' + item.link + '">' + item.name + '</a><br>';
+						
+			//document.body.innerHTML += output;
+		});
+		$('body').html(output);
+		
+	})
+
+</script>
+</head>
+<body>
+	
+</body>
+</html>

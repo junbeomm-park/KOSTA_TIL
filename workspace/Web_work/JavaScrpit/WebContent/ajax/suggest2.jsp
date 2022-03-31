@@ -1,5 +1,4 @@
 <%@page import="net.sf.json.JSONArray"%>
-<%@page import="kosta.Member"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Collections"%>
 <%@page import="java.util.List"%>
@@ -42,14 +41,14 @@
 // 		}
 // 	}
 	
-	List list = new ArrayList();
+/* 	List list = new ArrayList();
 	list.add(new Member("홍길동", "서울"));
 	list.add(new Member("박길동", "부산"));
 	list.add(new Member("조길동", "대구"));
  
 
 	String json = JSONArray.fromObject(list).toString();
-	out.print(json);
+	out.print(json); */
 %>
 
 
