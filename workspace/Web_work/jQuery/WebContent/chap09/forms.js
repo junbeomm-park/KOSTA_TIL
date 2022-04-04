@@ -23,8 +23,3 @@ $(document).ready(function(){
 		
 	});
 });
-
-
-
-
-
