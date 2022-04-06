@@ -5,7 +5,7 @@ $(function(){
 			type : 'get',
 			dataType : 'json',
 			success : function(data){
-				$('#dt').append('<tr><td>id</td><td>first_name</td><td>last_name</td><td>email</td><td>gender</td><td>ip_address</td></tr>')
+				$('#dt').append('<thead><tr><th>id</th><th>first_name</th><th>last_name</th><th>email</th><th>gender</th><th>ip_address</th></tr></thead>')
 				$.each(data, function(index, item){
 					$('#dt').append('<tr><td>' + item.id +
 						'</td><td>' + item.first_name + '</td>' +

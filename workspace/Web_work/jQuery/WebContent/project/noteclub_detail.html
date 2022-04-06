@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+        <link rel="stylesheet" href="./style.css" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+		<link rel="stylesheet" type="text/css" href="css/index_new.css">
+		<link rel="stylesheet" type="text/css" href="css/detail.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Poppins&display=swap" rel="stylesheet">
+		<style>
+			*{
+				font-family: 'Poppins', sans-serif;
+				font-family: 'Do Hyeon', sans-serif;
+			}
+		</style>
+		<script type="text/javascript" src="detail.js"></script>
+        
+    <title>NoteClub</title>
+
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+</head>
+  <body>
+
+    <div id="viewport">
+        <div id="header">
+            <div class="wing_parents" style="display: none;">
+                <div class="wing_area left_wing">
+                    <ul>
+                        <li><a href=""><img src="/data/design/chuchyn_479_1.png"></a></li>
+                        <li><a href=""><img src="/data/design/chuchyn_480_1.png"></a></li>
+                        <li><a href=""><img src="/data/design/chuchyn_481_1.png"></a></li>
+                    </ul>
+                </div>
+                <div class="wing_area right_wing">
+                    <ul>
+                        <li class="mu1"><a href="#">사용후기</a></li>
+                        <li class="mu2"><a href="#">이벤트정보</a></li>
+                        <li class="mu3"><a href="#">고객문의</a></li>
+                        <li class="mu4"><a href="#">A/S 안내</a></li>
+                        <li class="mu5"><a href="#">배송방법</a></li>
+                        <li class="mu6"><a href="#">배송조회</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div clas s="header_top">
+                <div class="contains clear">
+                    <ul class="menu">
+
+                        <li><a href="/bbs/login.php">로그인</a></li>
+                        <li><a href="/shop/member.html?incurl=member_join.php">회원가입</a></li>
+                        <li><a href="/bbs/login_jumun.php?url=/shop/mypage.html?incurl=mypage_orderlist.php">마이페이지</a></li>
+                        <li><a href="/shop/order_basket_list.html">장바구니</a></li>
+                        <li><a href="/shop/customer.html?incurl=customer_01.php">고객센터</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header_bottom">
+                <div class="mid_cont">
+                    <div class="contains clear">
+                        <h1 class="logo"><a href="/"><img src="images/logo.gif"></a></h1>
+                        <div class="inner clear">
+                            <div class="search_wrap">
+                                <form name="main_search" class="search_form clear" method="post" action="/shop/product_search.html" target="_parent">
+                                    <input type="text" name="search" class="search_text" placeholder="" value="">
+                                    <a href="javascript:main_search.submit()" class="search_btn">검색</a>
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="menu_area clear">
+                            <ul>
+                                <li class="mu1">
+                                    <a href="http://www.ilogen.com/d2d/delivery/invoice_search.jsp" target="_blank">
+                                        <span class="icon"><img src="images/img1.png" style="padding-left:2px"></span>
+                                        <span>배송조회</span>
+                                    </a>
+                                </li>
+                                <li class="mu2">
+                                    <a href="/bbs/board.php?bo_table=comm_post">
+                                        <span class="icon"><img src="images/img2.png" style="padding-left:4px"></span>
+                                        <span>사용후기</span>
+                                    </a>
+                                </li>
+                                <li class="mu3">
+                                    <a href="/bbs/board.php?bo_table=comm_event">
+                                        <span class="icon"><img src="images/img3.png" style="padding-left:1px"></span>
+                                        <span>이벤트</span>
+                                    </a>
+                                </li>
+                                <li class="mu4">
+                                    <a href="/bbs/board.php?bo_table=comm_free_old">
+                                        <span class="icon"><img src="images/img4.png" style="padding-left:3px"></span>
+                                        <span>고객문의</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- mide_cont -->
+
+                <nav id="nav" class="nav">
+                    <div class="contains clear">
+                        <ul id="gnb">
+                            <li><a href="#" class="menu_all" onclick="all_category(); return false;">전체 카테고리</a></li>
+                            <li><a href="/shop/view_page.html?incurl=view.php&amp;item=best&amp;month=4" class="best">이번달 베스트 상품</a></li>
+                            <li><a href="/shop/event.html?ev_no=4">이번달 특가상품</a></li>
+                            <li><a href="/shop/view_page.html?incurl=view.php&amp;page=5">PC 설치방법</a></li>
+                            <li><a href="/bbs/board.php?bo_table=comm_jorip">주문한 상품보기</a></li>
+                            <li><a href="/bbs/board.php?bo_table=comm_pcsangdam">1대1 견적상담</a></li>
+                        </ul>
+
+                        <div class="ctgr_parent main">
+
+
+                        <div id="all_category">
+                            <table>
+                                <tbody><tr>
+                                    <th><a href="/shop/product_list.html?depth=1&amp;cate1=6573">컴마왕 조립 PC</a></th><th><a href="/shop/product_list.html?depth=1&amp;cate1=9003">윈도우10 탑재 PC</a></th><th><a href="/shop/product_list.html?depth=1&amp;cate1=9010">본체 + 모니터 패키지</a></th><th><a href="/shop/product_list.html?depth=1&amp;cate1=4">컴퓨터 주요부품</a></th><th><a href="/shop/product_list.html?depth=1&amp;cate1=9031">키보드ㆍ마우스ㆍ주변기기</a></th><th><a href="/shop/product_list.html?depth=1&amp;cate1=9020">모니터ㆍ악세서리</a></th></tr><tr><td valign="top"><a href="/shop/system_list.html?cate2=9270&amp;pc_title=컴마왕스튜디오 월간추천견적" class="item ellipsis">컴마왕스튜디오 월간추천견적</a><a href="/shop/system_list.html?cate2=9063&amp;pc_title=컴왕Best특가" class="item ellipsis">컴왕Best특가</a><a href="/shop/system_list.html?cate2=7823&amp;pc_title=20만원~40만원대 사무&amp;가정용" class="item ellipsis">20만원~40만원대 사무&amp;가정용</a><a href="/shop/system_list.html?cate2=8726&amp;pc_title=50만원~60만원대 기본게임" class="item ellipsis">50만원~60만원대 기본게임</a><a href="/shop/system_list.html?cate2=8727&amp;pc_title=70만원~80만원대 멀티게임" class="item ellipsis">70만원~80만원대 멀티게임</a><a href="/shop/system_list.html?cate2=8613&amp;pc_title=90만원대~120만원대 중급게임" class="item ellipsis">90만원대~120만원대 중급게임</a><a href="/shop/system_list.html?cate2=8831&amp;pc_title=130만원대~180만원대 종합게임" class="item ellipsis">130만원대~180만원대 종합게임</a><a href="/shop/system_list.html?cate2=8832&amp;pc_title=200만원대이상 하이엔드 PC" class="item ellipsis">200만원대이상 하이엔드 PC</a><a href="/shop/system_list.html?cate2=8780&amp;pc_title=오버클럭 PC" class="item ellipsis">오버클럭 PC</a><a href="/shop/system_list.html?cate2=9060&amp;pc_title=일체형 수랭 PC" class="item ellipsis">일체형 수랭 PC</a><a href="/shop/system_list.html?cate2=9278&amp;pc_title=라이젠 4세대 PC" class="item ellipsis">라이젠 4세대 PC</a><a href="/shop/system_list.html?cate2=9284&amp;pc_title=인텔 12세대 PC" class="item ellipsis">인텔 12세대 PC</a><a href="/shop/system_list.html?cate2=8890&amp;pc_title=윈도우10 탑재 PC" class="item ellipsis">윈도우10 탑재 PC</a><a href="/shop/system_list.html?cate2=8909&amp;pc_title=모니터+본체 패키지" class="item ellipsis">모니터+본체 패키지</a></td><td valign="top"><a href="/shop/system_list.html?cate1=6573&amp;cate2=8890&amp;sprice=300000&amp;eprice=699999&amp;pc_title=30-60만원대 탑재PC&amp;origin_ctgr1=9003&amp;origin_ctgr2=9004" class="item ellipsis">30-60만원대 탑재PC</a><a href="/shop/system_list.html?cate1=6573&amp;cate2=8890&amp;sprice=700000&amp;eprice=899999&amp;pc_title=70-80만원대 탑재PC&amp;origin_ctgr1=9003&amp;origin_ctgr2=9005" class="item ellipsis">70-80만원대 탑재PC</a><a href="/shop/system_list.html?cate1=6573&amp;cate2=8890&amp;sprice=900000&amp;eprice=1099999&amp;pc_title=90-100만원대 탑재PC&amp;origin_ctgr1=9003&amp;origin_ctgr2=9006" class="item ellipsis">90-100만원대 탑재PC</a><a href="/shop/system_list.html?cate1=6573&amp;cate2=8890&amp;sprice=1100000&amp;eprice=1499999&amp;pc_title=110-140만원대 탑재PC&amp;origin_ctgr1=9003&amp;origin_ctgr2=9007" class="item ellipsis">110-140만원대 탑재PC</a><a href="/shop/system_list.html?cate1=6573&amp;cate2=8890&amp;sprice=1500000&amp;eprice=1999999&amp;pc_title=150-190만원대 탑재PC&amp;origin_ctgr1=9003&amp;origin_ctgr2=9207" class="item ellipsis">150-190만원대 탑재PC</a><a href="/shop/system_list.html?cate1=6573&amp;cate2=8890&amp;sprice=2000000&amp;eprice=2147483647&amp;pc_title=200만원 이상 패키지&amp;origin_ctgr1=9003&amp;origin_ctgr2=9208" class="item ellipsis">200만원 이상 패키지</a></td><td valign="top"><a href="/shop/system_list.html?cate1=6573&amp;cate2=8909&amp;sprice=300000&amp;eprice=799999&amp;pc_title=30-70만원대 패키지&amp;origin_ctgr1=9010&amp;origin_ctgr2=9019" class="item ellipsis">30-70만원대 패키지</a><a href="/shop/system_list.html?cate1=6573&amp;cate2=8909&amp;sprice=800000&amp;eprice=1099999&amp;pc_title=80-100만원대 패키지&amp;origin_ctgr1=9010&amp;origin_ctgr2=9013" class="item ellipsis">80-100만원대 패키지</a><a href="/shop/system_list.html?cate1=6573&amp;cate2=8909&amp;sprice=1100000&amp;eprice=1399999&amp;pc_title=110-130만원대 패키지&amp;origin_ctgr1=9010&amp;origin_ctgr2=9014" class="item ellipsis">110-130만원대 패키지</a><a href="/shop/system_list.html?cate1=6573&amp;cate2=8909&amp;sprice=1400000&amp;eprice=1999999&amp;pc_title=140-190만원대 패키지&amp;origin_ctgr1=9010&amp;origin_ctgr2=9015" class="item ellipsis">140-190만원대 패키지</a><a href="/shop/system_list.html?cate1=6573&amp;cate2=8909&amp;sprice=2000000&amp;eprice=2147483647&amp;pc_title=200만원 이상 패키지&amp;origin_ctgr1=9010&amp;origin_ctgr2=9017" class="item ellipsis">200만원 이상 패키지</a></td><td valign="top"><a href="/shop/product_list.html?depth=2&amp;cate1=4&amp;cate2=13" class="item ellipsis">CPU</a><a href="/shop/product_list.html?depth=2&amp;cate1=4&amp;cate2=14" class="item ellipsis">메인보드</a><a href="/shop/product_list.html?depth=2&amp;cate1=4&amp;cate2=15" class="item ellipsis">메모리</a><a href="/shop/product_list.html?depth=2&amp;cate1=4&amp;cate2=97" class="item ellipsis">그래픽카드</a><a href="/shop/product_list.html?depth=2&amp;cate1=4&amp;cate2=6780" class="item ellipsis">SSD</a><a href="/shop/product_list.html?depth=2&amp;cate1=4&amp;cate2=68" class="item ellipsis">하드디스크</a><a href="/shop/product_list.html?depth=2&amp;cate1=4&amp;cate2=72" class="item ellipsis">ODD(내장/외장)</a><a href="/shop/product_list.html?depth=2&amp;cate1=4&amp;cate2=135" class="item ellipsis">케이스</a><a href="/shop/product_list.html?depth=2&amp;cate1=4&amp;cate2=151" class="item ellipsis">파워서플라이</a><a href="/shop/product_list.html?depth=2&amp;cate1=4&amp;cate2=8561" class="item ellipsis">소프트웨어(OS)</a><a href="/shop/product_list.html?depth=2&amp;cate1=4&amp;cate2=8991" class="item ellipsis">공/수냉 쿨러</a><a href="/shop/product_list.html?depth=2&amp;cate1=4&amp;cate2=157" class="item ellipsis">조립 및 부가서비스</a></td><td valign="top"><a href="/shop/product_list.html?depth=2&amp;cate1=9031&amp;cate2=9032" class="item ellipsis">키보드</a><a href="/shop/product_list.html?depth=2&amp;cate1=9031&amp;cate2=9033" class="item ellipsis">마우스</a><a href="/shop/product_list.html?depth=2&amp;cate1=9031&amp;cate2=9049" class="item ellipsis">키보드+마우스</a><a href="/shop/product_list.html?depth=2&amp;cate1=9031&amp;cate2=9215" class="item ellipsis">마우스 패드ㆍ번지대</a><a href="/shop/product_list.html?depth=2&amp;cate1=9031&amp;cate2=9156" class="item ellipsis">외장형 저장장치</a><a href="/shop/product_list.html?depth=2&amp;cate1=9031&amp;cate2=9223" class="item ellipsis">그래픽카드 지지대</a></td><td valign="top"><a href="/shop/product_list.html?depth=2&amp;cate1=9020&amp;cate2=9021" class="item ellipsis">19~22인치 모니터</a><a href="/shop/product_list.html?depth=2&amp;cate1=9020&amp;cate2=9022" class="item ellipsis">24~26인치 모니터</a><a href="/shop/product_list.html?depth=2&amp;cate1=9020&amp;cate2=9023" class="item ellipsis">27~29인치 모니터</a><a href="/shop/product_list.html?depth=2&amp;cate1=9020&amp;cate2=9064" class="item ellipsis">30~39인치 모니터</a><a href="/shop/product_list.html?depth=2&amp;cate1=9020&amp;cate2=9024" class="item ellipsis">울트라와이드</a><a href="/shop/product_list.html?depth=2&amp;cate1=9020&amp;cate2=9124" class="item ellipsis">모니터 연결케이블</a><a href="/shop/product_list.html?depth=2&amp;cate1=9020&amp;cate2=9214" class="item ellipsis">모니터 악세서리</a></td></tr><tr><th><a href="/shop/product_list.html?depth=1&amp;cate1=9130">게이밍 의자ㆍ책상</a></th><th><a href="/shop/product_list.html?depth=1&amp;cate1=9137">프린터ㆍ복합기ㆍ스캐너</a></th><th><a href="/shop/product_list.html?depth=1&amp;cate1=8692">음향ㆍ방송용 장비</a></th><th><a href="/shop/product_list.html?depth=1&amp;cate1=9209">네트워크ㆍ공유기</a></th><th><a href="/shop/product_list.html?depth=1&amp;cate1=9248">스마트폰 용품ㆍ블루투스</a></th><th><a href="/shop/product_list.html?depth=1&amp;cate1=9255">인테리어ㆍ생활가전ㆍ공구</a></th></tr><tr><td valign="top"><a href="/shop/product_list.html?depth=2&amp;cate1=9130&amp;cate2=9136" class="item ellipsis">제닉스</a><a href="/shop/product_list.html?depth=2&amp;cate1=9130&amp;cate2=9236" class="item ellipsis">ABKO HACKER</a><a href="/shop/product_list.html?depth=2&amp;cate1=9130&amp;cate2=9132" class="item ellipsis">GEEKSTAR</a><a href="/shop/product_list.html?depth=2&amp;cate1=9130&amp;cate2=9135" class="item ellipsis">기타브랜드</a><a href="/shop/product_list.html?depth=2&amp;cate1=9130&amp;cate2=9203" class="item ellipsis">제닉스 게이밍 책상ㆍ스툴</a></td><td valign="top"><a href="/shop/product_list.html?depth=2&amp;cate1=9137&amp;cate2=9138" class="item ellipsis">잉크젯 프린터</a><a href="/shop/product_list.html?depth=2&amp;cate1=9137&amp;cate2=9139" class="item ellipsis">레이저 프린터</a><a href="/shop/product_list.html?depth=2&amp;cate1=9137&amp;cate2=9140" class="item ellipsis">복합기</a><a href="/shop/product_list.html?depth=2&amp;cate1=9137&amp;cate2=9142" class="item ellipsis">스캐너</a></td><td valign="top"><a href="/shop/product_list.html?depth=2&amp;cate1=8692&amp;cate2=9218" class="item ellipsis">스피커</a><a href="/shop/product_list.html?depth=2&amp;cate1=8692&amp;cate2=9147" class="item ellipsis">마이크</a><a href="/shop/product_list.html?depth=2&amp;cate1=8692&amp;cate2=9219" class="item ellipsis">헤드셋ㆍ이어폰</a><a href="/shop/product_list.html?depth=2&amp;cate1=8692&amp;cate2=9110" class="item ellipsis">캠ㆍ조명ㆍ크로마키ㆍ반사판</a><a href="/shop/product_list.html?depth=2&amp;cate1=8692&amp;cate2=9112" class="item ellipsis">캡쳐보드ㆍ컨트롤러</a><a href="/shop/product_list.html?depth=2&amp;cate1=8692&amp;cate2=9111" class="item ellipsis">사운드카드</a></td><td valign="top"><a href="/shop/product_list.html?depth=2&amp;cate1=9209&amp;cate2=9220" class="item ellipsis">공유기</a><a href="/shop/product_list.html?depth=2&amp;cate1=9209&amp;cate2=9211" class="item ellipsis">랜카드</a><a href="/shop/product_list.html?depth=2&amp;cate1=9209&amp;cate2=9212" class="item ellipsis">랜 케이블</a><a href="/shop/product_list.html?depth=2&amp;cate1=9209&amp;cate2=9213" class="item ellipsis">스위칭 허브</a><a href="/shop/product_list.html?depth=2&amp;cate1=9209&amp;cate2=9261" class="item ellipsis">멀티탭</a></td><td valign="top"><a href="/shop/product_list.html?depth=2&amp;cate1=9248&amp;cate2=9252" class="item ellipsis">블루투스 이어폰</a><a href="/shop/product_list.html?depth=2&amp;cate1=9248&amp;cate2=9264" class="item ellipsis">휴대용 스피커</a><a href="/shop/product_list.html?depth=2&amp;cate1=9248&amp;cate2=9249" class="item ellipsis">스마트폰 충전기</a><a href="/shop/product_list.html?depth=2&amp;cate1=9248&amp;cate2=9250" class="item ellipsis">스마트폰 케이블</a><a href="/shop/product_list.html?depth=2&amp;cate1=9248&amp;cate2=9253" class="item ellipsis">셀카봉ㆍ짐벌ㆍ거치대</a><a href="/shop/product_list.html?depth=2&amp;cate1=9248&amp;cate2=9254" class="item ellipsis">핸드 선풍기</a></td><td valign="top"><a href="/shop/product_list.html?depth=2&amp;cate1=9255&amp;cate2=9265" class="item ellipsis">공기청정기</a><a href="/shop/product_list.html?depth=2&amp;cate1=9255&amp;cate2=9256" class="item ellipsis">수작업공구</a><a href="/shop/product_list.html?depth=2&amp;cate1=9255&amp;cate2=9266" class="item ellipsis">스탠드ㆍ조명</a><a href="/shop/product_list.html?depth=2&amp;cate1=9255&amp;cate2=9263" class="item ellipsis">정밀드라이버</a><a href="/shop/product_list.html?depth=2&amp;cate1=9255&amp;cate2=9257" class="item ellipsis">케이블타이ㆍ배선정리</a><a href="/shop/product_list.html?depth=2&amp;cate1=9255&amp;cate2=9259" class="item ellipsis">인테리어 시계</a></td>    							 </tr>
+                                </tbody></table>
+                        </div><!-- all_category -->
+
+                    </div>
+                </nav><!-- nav -->
+            </div>
+        </div>
+
+
+	<div id="content" class="sub">
+		<div class="contains">
+			<div class="detail_wrap assembly">
+					<!-- ncheckout -->
+
+					<div class="detail_top clear">
+						<div class="thumb">
+							<div class="bxslider">
+  								<div><img src="images/galaxy.jpg" title="360˚ 폴더 기능" style="height: 500px;"></div>
+  								<div><img src="images/galaxy2.jpg" title="갤럭시 etc" style="height: 500px;"></div>
+  								<div><img src="images/galaxy3.jpg" title="색상" style="height: 500px;"></div>
+							</div>
+						</div>
+						<div class="info">
+							<span class="name">갤럭시북 프로 360<br>NT950XDY-A51A
+							</span>
+
+
+							<dl class="dl_total clear">
+								<dt>총 합계금액</dt>
+								<dd>
+									<ul class="price">
+										<li><span class="txt">판매가</span> <span style="font-size: 15px;" class="cost">1,145,000 원</span> <input type="hidden" name="dptprice1" value="1043600" size="7" readonly=""> <input type="hidden" name="dptprice_pay" value="1043600" size="7" readonly=""> <input type="hidden" name="flag5" value="2" readonly=""> <input type="hidden" name="no5" value="139647" readonly=""> <input type="hidden" name="chu_plus_price" value="0"> <input type="hidden" name="chu_product_price" value="0" size="7"> <input type="hidden" name="chu_mileage_price" value="0"></li>
+									</ul>
+								</dd>
+							</dl>
+
+							<dl class="dl_option clear" id="dl_option">
+								<dt>배송 방법</dt>
+								<dd>일반 배송 / 퀵서비스 / 방문 수령</dd>
+								<dt>배송비</dt>
+								<dd>무료배송</dd>
+								<dt >주문 수량</dt>
+								<dd class="orderAmount" >
+									<input type="text" id="pd_amount" class="amount" name="amount_1" value="1">
+								</dd>
+								<dt>기본 판매가</dt>
+								<dd class="price2">
+									1,145,000 원 
+								</dd>
+								<dt>추가 변경 금액</dt>
+								<dd>
+									<span id="chayack_price_view" class="chayack_price_view">0</span>원 <input type="hidden" name="chayack_price" value="0" size="7" readonly="">
+								</dd>
+								<dt>적립금</dt>
+								<dd>3,130</dd>
+							</dl>
+							<div class="buy_wrap " style="float : left;">
+								<div class="btn_wrap">
+									<a href="javascript:order_basket('basket');" class="btn basket_btn" id="cartBtn">장바구니</a> <a href="javascript:order_basket('buy');" class="btn buy_btn">구매하기</a>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+					<h1 class="hp"><span style="font-size:40px">&#129409;&nbsp;</span>제품 스펙</h1>
+					<div class="spec">
+						<div class="spec-block" style="border-color: black;">
+						
+							<p class="spec-head">운영체제</p>
+							<ul class="spec-content">
+								<li>Windows 11 Home</li>
+							</ul>
+						</div>
+						<div class="spec-block">
+							<p class="spec-head">프로세서/칩셋</p>
+							<ul class="spec-content">
+								<li>Intel® Core™ i5-1135G7 Processor <br>(2.4 GHz up to 4.2 GHz, 8 MB L3 Cache) </li>
+							</ul>
+						</div>
+						<div class="spec-block">
+							<p class="spec-head">메모리</p>
+							<ul class="spec-content">
+								<li>16 GB LPDDR4x Memory (On BD 16 GB) </li>
+							</ul>
+						</div>
+						<div class="spec-block">
+							<p class="spec-head">저장장치</p>
+							<ul class="spec-content">
+								<li>256 GB NVMe SSD <br>총 SSD 슬롯 : 2 </li>
+							</ul>
+						</div>
+						<div class="spec-block">
+							<p class="spec-head">디스플레이</p>
+							<ul class="spec-content">
+								<li>39.6 cm FHD 광시야각 AMOLED Display (1920 x 1080),<br> 터치스크린 *화면크기(인치) : 약 15.6인치 </li>
+							</ul>
+						</div>
+						<div class="spec-block">
+							<p class="spec-head">그래픽</p>
+							<ul class="spec-content">
+								<li>Intel® Iris® Xe Graphics </li>
+							</ul>
+						</div>
+						<div class="spec-block">
+							<p class="spec-head">멀티미디어</p>
+							<ul class="spec-content">
+								<li>AKG 스테레오 스피커 ( 1.5 W x 2 )<br>Dolby Atmos® </li>
+							</ul>
+						</div>
+						<div class="spec-block">
+							<p class="spec-head">네트워크</p>
+							<ul class="spec-content">
+								<li>Bluetooth v5.1<br>Wi-Fi 6E (Gig+), 802.11 ax 2x2 </li>
+							</ul>
+						</div>
+						<div class="spec-block">
+							<p class="spec-head">보안기능</p>
+							<ul class="spec-content">
+								<li>TPM, 지문인식 </li>
+							</ul>
+						</div>
+						<div class="spec-block">
+							<p class="spec-head">색상</p>
+							<ul class="spec-content">
+								<li>미스틱 브론즈 </li>
+							</ul>
+						</div>
+						<div class="spec-block">
+							<p class="spec-head">전원</p>
+							<ul class="spec-content">
+								<li>68 Wh (Typical)<br>65 W USB Type-C 어댑터 </li>
+							</ul>
+						</div>
+						<div class="spec-block">
+							<p class="spec-head">크기</p>
+							<ul class="spec-content">
+								<li>354.85 x 227.97 x 11.9 mm </li>
+							</ul>
+						</div>
+						<div class="spec-block" >
+							<p class="spec-head">무게</p>
+							<ul class="spec-content">
+								<li>1.39 kg</li>
+							</ul>
+						</div>
+					</div>
+					
+					<h1 class="hp"><span style="font-size:40px">&#128221;&nbsp;</span>제품 후기</h1>
+					<div class="review">
+						<!-- <table class="rt">
+							<tr>
+								<th>작성자</th>
+								<th>구매 모델</th>
+								<th>내용</th>
+								<th>구매 일자</th>
+							</tr>
+							<tr class="test">
+								
+							</tr>
+						</table> -->
+						<table id="dt"></table>
+					
+					</div>
+			</div>
+		</div>
+		
+	</div>
+
+        <div id="footer">
+            <div class="contains">
+                <div class="footer_bottom">
+                    <div class="guide">
+                        <span class="sub_title">Guide</span>
+                        <ul>
+                            <li><a href="/shop/company.html?incurl=company_01.php">회사소개</a></li>
+                            <li><a href="/shop/company.html?incurl=company_02.php">오시는길</a></li>
+                            <li><a href="/shop/customer.html?incurl=customer_08.php">개인정보 처리방침</a></li>
+                            <li><a href="/shop/customer.html?incurl=customer_07.php">이용약관</a></li>
+                        </ul>
+                    </div>
+                    <div class="info">
+                        <span class="sub_title">Company Information</span>
+                        <ul>
+                            <li><span>상호 노트이야기</span></li>
+                            <li>
+                                <span>서울 용산구 원효로3가 원효전자상가 6동 3층 119호</span>
+                                <span>노트이야기는 공정거래위원회에서 심의한 표준약관을 사용합니다.</span>
+                                <span>사업자등록번호 106-08-80119 대표자 최용우</span>
+                            </li>
+                            <li>
+                                <span>통신판매신고번호 06577 개인정보관리자 최용우</span>
+                                <span>고객센터 02-1644-7803 팩스 02-701-1804 E-mail notestory1@naver.com 호스팅 업체 주식회사 다나와</span>
+                            </li>
+                            <li>
+                                <span class="copyright">Copyright© www.commawang.co.kr All right reserved.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- footer -->
+        
+        
+
+    </div><div id="criteo-tags-div" style="display: none;"><iframe src="https://gum.criteo.com/syncframe?topUrl=www.commawang.co.kr&amp;origin=onetag#{&quot;bundle&quot;:{&quot;origin&quot;:3,&quot;value&quot;:&quot;InJUP19TOU1GRmRheVZzdmV5TU9YcXFmUVY0dkozNGh6NTFDRDhzUGtTeFlUTnN6eHZrUEpkTHBVTW04VlhyZ0JXMVVJOXpzTyUyRnJnNyUyRkZSRWxUTWZlN1ZETHl2UXZSNWYlMkJLVCUyRnBveTl0VkR2bmR4bDRZR1NGc1J6ak5IOXNib00wYWpqUFFmVWZGNjF0aDg3Sm1Qa1Fvd1AyUSUzRCUzRA&quot;},&quot;cw&quot;:true,&quot;optout&quot;:{&quot;origin&quot;:0,&quot;value&quot;:null},&quot;origin&quot;:&quot;onetag&quot;,&quot;pm&quot;:0,&quot;sid&quot;:{&quot;origin&quot;:0,&quot;value&quot;:null},&quot;tld&quot;:&quot;commawang.co.kr&quot;,&quot;topUrl&quot;:&quot;www.commawang.co.kr&quot;,&quot;version&quot;:&quot;5_8_1&quot;,&quot;ifa&quot;:{&quot;origin&quot;:0,&quot;value&quot;:null},&quot;lsw&quot;:true}" id="criteo-syncframe-onetag" width="0" height="0" frameborder="0" style="border-width:0px; margin:0px; display:none" title="Criteo GUM iframe"></iframe></div><!-- viewport -->
+    </body></html>
+</DOCTYPE>
