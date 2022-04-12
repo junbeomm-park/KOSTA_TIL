@@ -20,9 +20,14 @@
 <jsp:setProperty property="*" name="board"/>
 
 <%
-	BoardDao dao = new BoardDao();
-	dao.insertBoard(board);
+	BoardDao dao = BoardDao.getInstance();
+	int re = dao.insertBoard(board);
 
+	if(re != -1){
+		out.println("글쓰기 성공");
+	}else{
+		out.println("글쓰기 실패");
+	}
 %>
 <!DOCTYPE html>
 <html>
