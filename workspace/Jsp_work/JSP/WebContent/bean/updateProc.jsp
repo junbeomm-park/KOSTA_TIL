@@ -1,33 +1,24 @@
 <%@page import="kosta.bean.BoardDao"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="kosta.bean.Board"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <%
 	request.setCharacterEncoding("utf-8");
-	
-	//폼에서 데이터를 받아서 Board객체로 전달
-	/* Board board = new Board();
-	board.setTitle(request.getParameter("title"));
-	board.setWriter(request.getParameter("writer"));
-	board.setContents(request.getParameter("contents")); */
-	
-	//Java => Action Tag 대신
-
 %>
-
 <jsp:useBean id="board" class="kosta.bean.Board"/>
 <jsp:setProperty property="*" name="board"/>
-
 <%
 	BoardDao dao = BoardDao.getInstance();
-	int re = dao.insertBoard(board);
-
-	if(re != -1){
+	int re = dao.update(board);
+	
+	if(re > 0){
 		response.sendRedirect("list.jsp");
-	}else{
-		out.println("글쓰기 실패");
 	}
+
 %>
 <!DOCTYPE html>
 <html>

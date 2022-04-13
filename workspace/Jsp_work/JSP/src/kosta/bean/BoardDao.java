@@ -3,11 +3,12 @@ package kosta.bean;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
-
-import org.apache.catalina.Context;
 
 
 
@@ -32,15 +33,102 @@ public class BoardDao {
 		
 	}
 	
-	public void listBoard() {
+	public Board detailBoard(int seq) {
+		Board board = new Board();
 		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from board where seq=?";
 		
 		try {
 			conn = getDBCPConnection();
-			System.out.println("dbcp : " + conn);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, seq);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				board.setSeq(rs.getInt("seq"));
+				board.setTitle(rs.getString("title"));
+				board.setWriter(rs.getString("writer"));
+				board.setContents(rs.getString("contents"));
+				board.setRegdate(rs.getString("regdate"));
+				board.setHitcount(rs.getInt("hitcount"));
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			
 		}
+		
+		return board;
+	}
+	
+	public int update(Board board) {
+		int re = -1;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		String sql = "update board set title=?,contents=? where seq=?";
+		try {
+			conn = getDBCPConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, board.getTitle());
+			pstmt.setString(2, board.getContents());
+			pstmt.setInt(3, board.getSeq());
+			
+			re = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (Exception e2) {}
+			}
+		}
+		return re;
+	}
+	
+	public List<Board> listBoard() {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<Board> list = null; //ResultSet => Board => List
+		
+		String sql = "select * from board order by seq desc";
+		
+		try {
+			conn = getDBCPConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			list = new ArrayList<Board>();
+			
+			while(rs.next()) {
+				Board board = new Board(); //1객체 <= 1로우
+				board.setSeq(rs.getInt("seq"));
+				board.setTitle(rs.getString("title"));
+				board.setWriter(rs.getString("writer"));
+				board.setContents(rs.getString("contents"));
+				board.setRegdate(rs.getString("regdate"));
+				board.setHitcount(rs.getInt("hitcount"));
+				
+				list.add(board);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(pstmt != null) {
+				try {
+					
+				} catch (Exception e2) {}
+			}
+		}
+		
+		return list;
 	}
 
 	public int insertBoard(Board board) {
