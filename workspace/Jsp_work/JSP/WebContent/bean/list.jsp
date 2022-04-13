@@ -1,11 +1,11 @@
 <%@page import="kosta.bean.Board"%>
 <%@page import="java.util.List"%>
-<%@page import="kosta.bean.BoardDao"%>
+<%@page import="kosta.bean.BoardDao2"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <%
-	BoardDao dao = BoardDao.getInstance();
+	BoardDao2 dao = BoardDao2.getInstance();
 	List<Board> list = dao.listBoard();
 %>
 <!DOCTYPE html>
