@@ -31,6 +31,22 @@ public class BoardDao2 {
 		return new SqlSessionFactoryBuilder().build(in);
 	}
 	
+	public Blog selectBlog(String id) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		Blog blog = null;
+		try {
+			blog = sqlSession.selectOne("kosta.mapper.BlogMapper.selectBlog", id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return blog;
+	}
+	
 	public int insertBoard(Board board) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		int re = -1;

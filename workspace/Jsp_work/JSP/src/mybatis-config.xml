@@ -7,6 +7,8 @@
 	<typeAliases>
 		<typeAlias type="kosta.bean.Board" alias="Board"/>
 		<typeAlias type="kosta.bean.Member" alias="Member"/>
+		<typeAlias type="kosta.bean.Author" alias="Author"/>
+		<typeAlias type="kosta.bean.Blog" alias="Blog"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -21,6 +23,7 @@
 	<mappers>
 		<mapper resource="kosta/mapper/Board.xml"/>
 		<mapper resource="kosta/mapper/Member.xml"/>
+		<mapper resource="kosta/mapper/Blog.xml"/>
 	</mappers>
 	
 </configuration>
