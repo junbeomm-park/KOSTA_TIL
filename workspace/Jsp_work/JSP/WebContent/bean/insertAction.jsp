@@ -1,4 +1,4 @@
-<%@page import="kosta.bean.BoardDao"%>
+<%@page import="kosta.bean.BoardDao2"%>
 <%@page import="kosta.bean.Board"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -20,7 +20,7 @@
 <jsp:setProperty property="*" name="board"/>
 
 <%
-	BoardDao dao = BoardDao.getInstance();
+	BoardDao2 dao = BoardDao2.getInstance();
 	int re = dao.insertBoard(board);
 
 	if(re != -1){

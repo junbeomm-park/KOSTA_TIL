@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import kosta.mapper.BoardMapper;
+
 public class BoardDao2 {
 	private static BoardDao2 dao = new BoardDao2();
 	
@@ -29,12 +31,93 @@ public class BoardDao2 {
 		return new SqlSessionFactoryBuilder().build(in);
 	}
 	
+	public int insertBoard(Board board) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		
+		try {
+			//re = sqlSession.insert("kosta.mapper.BoardMapper.insertBoard", board);
+			re = sqlSession.getMapper(BoardMapper.class).insertBoard(board);
+			if(re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return re;
+	}
+	
+	public Board detailBoard(int seq) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		Board board = new Board();
+		
+		try {
+			board = sqlSession.getMapper(BoardMapper.class).detailBoard(seq);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return board;
+	}
+	
+	public int updateBoard(Board board) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		
+		try {
+			re = sqlSession.getMapper(BoardMapper.class).updateBoard(board);
+			if(re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
+	
+	public int deleteBoard(int seq) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		
+		try {
+			re = sqlSession.getMapper(BoardMapper.class).deleteBoard(seq);
+			if(re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
 	public List<Board> listBoard(){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Board> list = null;
 		
 		try {
-			list = sqlSession.selectList("kosta.mapper.BoardMapper.listBoard");
+			//list = sqlSession.selectList("kosta.mapper.BoardMapper.listBoard");
+			list = sqlSession.getMapper(BoardMapper.class).listBoard();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
