@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
     
 <%
-	request.setCharacterEncoding("utf-8");
+	//request.setCharacterEncoding("utf-8");
 %>
 <jsp:useBean id="board" class="kosta.bean.Board"/>
 <jsp:setProperty property="*" name="board"/>

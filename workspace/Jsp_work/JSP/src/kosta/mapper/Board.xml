@@ -7,8 +7,19 @@
 <mapper namespace="kosta.mapper.BoardMapper">
 	<cache />
 	
-	<select id="listBoard" resultType="Board">
-		select * from board order by seq desc
+	<select id="listBoard" parameterType="java.util.Map" resultType="Board">
+		select * from board
+		<if test="area != null">
+			<where>
+				<!-- where (title LIKE %JSP% OR writer LIKE %JSP%) -->
+				<foreach collection="area" item="item" separator="OR" open="(" close=")">
+					${item} LIKE #{searchKey}
+				</foreach> 
+			</where>
+		</if>
+		
+		
+		order by seq desc
 	</select>
 	
 	<insert id="insertBoard" parameterType="Board">

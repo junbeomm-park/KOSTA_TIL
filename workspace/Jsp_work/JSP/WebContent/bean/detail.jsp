@@ -2,6 +2,7 @@
 <%@page import="kosta.bean.BoardDao2"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!-- 글번호 받기 String -> int
 	BoardDao 객체 구하기
@@ -16,6 +17,8 @@
 	
 	BoardDao2 dao = BoardDao2.getInstance();
 	Board board = dao.detailBoard(seq);
+	
+	request.setAttribute("board", board);
 
 %>
 
@@ -27,16 +30,15 @@
 </head>
 <body>
 <ul>
-	<li><%= board.getSeq() %></li>
-	<li><%= board.getTitle() %></li>
-	<li><%= board.getWriter() %></li>
-	<li><%= board.getContents() %></li>
-	<li><%= board.getHitcount() %></li>
+	<li>${board.seq }</li>
+	<li>${board.title }</li>
+	<li>${board.writer }</li>
+	<li>${board.contents }</li>
 
 </ul>
 <br>
 
-<a href="updateForm.jsp?seq=<%=seq%>">글수정</a>
+<a href="updateForm.jsp?seq=${board.seq }">글수정</a>
 <a href="deleteProc.jsp?seq=<%=seq%>">글삭제</a>
 
 </body>

@@ -2,6 +2,7 @@ package kosta.bean;
 
 import java.io.InputStream;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -127,13 +128,13 @@ public class BoardDao2 {
 		}
 		return re;
 	}
-	public List<Board> listBoard(){
+	public List<Board> listBoard(Map map){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Board> list = null;
 		
 		try {
 			//list = sqlSession.selectList("kosta.mapper.BoardMapper.listBoard");
-			list = sqlSession.getMapper(BoardMapper.class).listBoard();
+			list = sqlSession.getMapper(BoardMapper.class).listBoard(map);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {

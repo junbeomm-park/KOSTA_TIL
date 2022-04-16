@@ -9,6 +9,7 @@
 		<typeAlias type="kosta.bean.Member" alias="Member"/>
 		<typeAlias type="kosta.bean.Author" alias="Author"/>
 		<typeAlias type="kosta.bean.Blog" alias="Blog"/>
+		<typeAlias type="kosta.bean.Search" alias="Search"/>
 	</typeAliases>
 	
 	<environments default="development">
