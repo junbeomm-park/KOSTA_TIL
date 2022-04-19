@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="insert_form.jsp">글쓰기</a>
+	<a href="insertForm.do">글쓰기</a>
 	<table border="1">
 		<tr>
 			<td>글번호</td>
@@ -19,19 +19,8 @@
 			<td>작성일자</td>
 			<td>조회수</td>
 		</tr>
-<%-- 		<% for(int i = 0; i < list.size(); i++) { 
-				Board board = list.get(i);
-		%>
-		<tr>
-			<td><%= board.getSeq() %></td>
-			<td><a href="detail.jsp?seq=<%= board.getSeq() %>"><%= board.getTitle() %></a></td>
-			<td><%= board.getWriter() %></td>
-			<td><%= board.getRegdate() %></td>
-			<td><%= board.getHitcount() %></td>
-		</tr>
-		<%} %> --%>
 		
-		<c:forEach var="p" items="${list }">
+		<c:forEach var="p" items="${listModel.list }">
 			<tr>
 				<td>${p.seq }</td>
 				<td><a href="detailAction.do?seq=${p.seq}">${p.title }</a></td>
@@ -45,8 +34,26 @@
 		</c:forEach>
 	</table>
 	<br><br>
+	<!-- 페이징 처리 부분 -->
 	
-	<form action="list.jsp" method="get">
+	<!-- 이전영역 -->
+	<c:if test="${listModel.startPage >= 6 }">
+		<a href="listAction.do?pageNum=${listModel.startPage - 1 }">[이전]</a>
+	</c:if>
+	
+	<!-- 페이지 목록 출력 -->
+	<c:forEach var="pageNo" begin="${listModel.startPage }" end="${listModel.endPage }">
+		<c:if test="${listModel.requestPage == pageNo }"><b></c:if>
+			<a href="listAction.do?pageNum=${pageNo }">[${pageNo }]</a>
+		<c:if test="${listModel.requestPage == pageNo }"></b></c:if>
+	</c:forEach>
+	
+	<!-- 이후영역 -->
+	<c:if test="${listModel.endPage < listModel.totalPageCount }">
+		<a href="listAction.do?pageNum=${listModel.startPage + 5 }">[이후]</a>
+	</c:if>
+	
+	<form action="listAction.do" method="get">
 		<input type="checkbox" name="area" value="title"> 제목
 		<input type="checkbox" name="area" value="writer"> 작성자
 		<input type="text" name="searchKey" size="10">

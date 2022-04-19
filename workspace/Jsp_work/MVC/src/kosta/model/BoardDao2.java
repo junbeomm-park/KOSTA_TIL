@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -57,13 +58,13 @@ public class BoardDao2 {
 		return re;
 	}
 	
-	public List<Board> listBoard(){
+	public List<Board> listBoard(int startRow, Search search){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Board> list = null;
 		
 		try {
 			//list = sqlSession.selectList("kosta.mapper.BoardMapper.listBoard");
-			list = sqlSession.getMapper(BoardMapper.class).listBoard();
+			list = sqlSession.getMapper(BoardMapper.class).listBoard(search, new RowBounds(startRow, 2));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -89,27 +90,80 @@ public class BoardDao2 {
 		}
 		return board;
 	}
-//	
-//	public int updateBoard(Board board) {
-//		SqlSession sqlSession = getSqlSessionFactory().openSession();
-//		int re = -1;
-//		
-//		try {
-//			re = sqlSession.getMapper(BoardMapper.class).updateBoard(board);
-//			if(re>0) {
-//				sqlSession.commit();
-//			}else {
-//				sqlSession.rollback();
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}finally {
-//			if(sqlSession != null) {
-//				sqlSession.close();
-//			}
-//		}
-//		return re;
-//	}
+	
+	public int updateBoard(Board board) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		
+		try {
+			re = sqlSession.getMapper(BoardMapper.class).updateBoard(board);
+			if(re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
+	
+	public int countBoard(Search search) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = 0;
+		try {
+			re = sqlSession.getMapper(BoardMapper.class).countBoard(search);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		
+		return re;
+	}
+	
+	public int insertReply(Reply reply) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = sqlSession.getMapper(BoardMapper.class).insertReply(reply);
+			if(re>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return re;
+	}
+	
+	public List<Reply> listReply(){
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Reply> list = null;
+		
+		try {
+			//list = sqlSession.selectList("kosta.mapper.BoardMapper.listBoard");
+			list = sqlSession.getMapper(BoardMapper.class).listReply();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(sqlSession != null) {
+				sqlSession.close();
+			}
+		}
+		return list;
+	}
 //	
 //	public int deleteBoard(int seq) {
 //		SqlSession sqlSession = getSqlSessionFactory().openSession();

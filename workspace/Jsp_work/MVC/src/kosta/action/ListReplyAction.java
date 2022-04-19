@@ -5,22 +5,20 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kosta.model.Board;
-import kosta.model.ListModel;
+import kosta.model.Reply;
 import kosta.service.BoardService;
 
-public class ListAction implements Action {
+public class ListReplyAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		BoardService service = BoardService.getInstance();
 		ActionForward forward = new ActionForward();
 		
-		ListModel listModel = service.listBoardService(request);
-		//request.setAttribute("list", list);
-		request.setAttribute("listModel", listModel);
+		List<Reply> relist = service.listReplyService(request);
+		request.setAttribute("relist", relist);
 		
-		forward.setPath("/list.jsp");
+		forward.setPath("/detail.jsp");
 		forward.setRedirect(false);
 		
 		return forward;

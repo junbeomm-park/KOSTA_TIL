@@ -2,23 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!-- 글번호 받기 String -> int
-	BoardDao 객체 구하기
-	BoardDao detailBoard() 호출
-	결과값을 화면에 적절히 출력 -->    
 
-<%-- <%
-	int seq = 1;
-	if(request.getParameter("seq") != null){
-		seq = Integer.parseInt(request.getParameter("seq"));
-	}
-	
-	BoardDao2 dao = BoardDao2.getInstance();
-	Board board = dao.detailBoard(seq);
-	
-	request.setAttribute("board", board);
-
-%> --%>
 
 <!DOCTYPE html>
 <html>
@@ -27,16 +11,29 @@
 <title>Insert title here</title>
 </head>
 <body>
-<ul>
-	<li>${board.seq }</li>
-	<li>${board.title }</li>
-	<li>${board.writer }</li>
-	<li>${board.contents }</li>
+	<h2>글세부보기</h2>
+	<ul>
+		<li>${board.seq }</li>
+		<li>${board.title }</li>
+		<li>${board.writer }</li>
+		<li>${board.contents }</li>
+	
+	</ul>
+	<br>
+	<h4>댓글목록</h4>
+	<ul>
+		<li>${relist.r_title }
+	</ul>
+	
+	<form action="insertReplyAction.do" method="post">
+		<input type="hidden" name="seq" value="${board.seq }">
+		댓글제목 : <input type="text" name="r_title"><br>
+		댓글 작성자 : <input type="text" name="r_writer"><br>
+		댓글 내용 : <input type="text" name="r_contents"><br>
+		<input type="submit" value="댓글쓰기"> 
+	</form>
 
-</ul>
-<br>
-
-<a href="updateForm.jsp?seq=${board.seq }">글수정</a>
+<a href="updateForm.do?seq=${board.seq }">글수정</a>
 <%-- <a href="deleteProc.jsp?seq=<%=seq%>">글삭제</a> --%>
 
 </body>
