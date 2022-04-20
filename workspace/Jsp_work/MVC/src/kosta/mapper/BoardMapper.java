@@ -18,5 +18,5 @@ public interface BoardMapper {
 	int countBoard(Search search);
 	
 	int insertReply(Reply reply);
-	List<Reply> listReply();
+	List<Reply> listReply(int seq);
 }

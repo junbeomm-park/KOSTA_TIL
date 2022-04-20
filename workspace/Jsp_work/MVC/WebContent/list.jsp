@@ -1,5 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -14,22 +15,40 @@
 	<table border="1">
 		<tr>
 			<td>글번호</td>
+			<td>이미지</td>
 			<td>제목</td>
 			<td>작성자</td>
 			<td>작성일자</td>
 			<td>조회수</td>
 		</tr>
 		
-		<c:forEach var="p" items="${listModel.list }">
+		<c:forEach var="board" items="${listModel.list }">
 			<tr>
-				<td>${p.seq }</td>
-				<td><a href="detailAction.do?seq=${p.seq}">${p.title }</a></td>
-				<td>${p.writer }</td>
+				<td>${board.seq }</td>
 				<td>
-					<fmt:parseDate var="dt" value="${p.regdate }" pattern="yyyy-MM-dd HH:mm:ss"/>
+					<c:if test="${board.fname != null }">
+						<c:set var="head" value="${fn:substring(board.fname, 
+												0, fn:length(board.fname)-4) }"></c:set>
+						<c:set var="pattern" value="${fn:substring(board.fname, 
+						fn:length(head) +1, fn:length(board.fname)) }"></c:set>
+					
+						<c:choose>
+							<c:when test="${pattern == 'jpg' || pattern == 'gif' || pattern =='png' }">
+								<img src="/MVC/upload/${head }_small.${pattern}">
+							</c:when>
+							<c:otherwise>
+								<c:out value="NO IMAGE"></c:out>
+							</c:otherwise>
+						</c:choose>
+					</c:if>
+				</td>
+				<td><a href="detailAction.do?seq=${board.seq}">${board.title }</a></td>
+				<td>${board.writer }</td>
+				<td>
+					<fmt:parseDate var="dt" value="${board.regdate }" pattern="yyyy-MM-dd HH:mm:ss"/>
 					<fmt:formatDate value="${dt }" pattern="yyyy/MM/dd"/>
 				</td>
-				<td>${p.hitcount }</td>
+				<td>${board.hitcount }</td>
 			</tr>
 		</c:forEach>
 	</table>

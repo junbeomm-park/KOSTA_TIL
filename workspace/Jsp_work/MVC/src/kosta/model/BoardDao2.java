@@ -148,13 +148,12 @@ public class BoardDao2 {
 		return re;
 	}
 	
-	public List<Reply> listReply(){
+	public List<Reply> listReply(int seq){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		List<Reply> list = null;
 		
 		try {
-			//list = sqlSession.selectList("kosta.mapper.BoardMapper.listBoard");
-			list = sqlSession.getMapper(BoardMapper.class).listReply();
+			list = sqlSession.getMapper(BoardMapper.class).listReply(seq);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {

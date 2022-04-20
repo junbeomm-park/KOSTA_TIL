@@ -17,13 +17,29 @@
 		<li>${board.title }</li>
 		<li>${board.writer }</li>
 		<li>${board.contents }</li>
-	
+		<li><a href="/MVC/download.jsp?filename=${board.fname}">${board.fname }</a></li>
 	</ul>
 	<br>
 	<h4>댓글목록</h4>
-	<ul>
-		<li>${relist.r_title }
-	</ul>
+	<table border="1">
+		<tr>
+			<td>댓글번호</td>
+			<td>댓글제목</td>
+			<td>댓글작성자</td>
+			<td>댓글내용</td>
+			<td>댓글일자</td>
+		</tr>
+		<c:forEach var="reply" items="${replys }">
+			<tr>
+				<td>${reply.r_no }</td>
+				<td>${reply.r_title }</td>
+				<td>${reply.r_writer }</td>
+				<td>${reply.r_contents }</td>
+				<td>${reply.r_regdate }</td>
+			</tr>
+		</c:forEach>
+
+	</table>
 	
 	<form action="insertReplyAction.do" method="post">
 		<input type="hidden" name="seq" value="${board.seq }">

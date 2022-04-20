@@ -9,12 +9,13 @@ public class Board implements Serializable {
 	private String contents;
 	private String regdate;
 	private int hitcount;
+	private String fname;
 	
 	public Board() {
 		
 	}
-	
-	public Board(int seq, String title, String writer, String contents, String regdate, int hitcount) {
+
+	public Board(int seq, String title, String writer, String contents, String regdate, int hitcount, String fname) {
 		super();
 		this.seq = seq;
 		this.title = title;
@@ -22,7 +23,10 @@ public class Board implements Serializable {
 		this.contents = contents;
 		this.regdate = regdate;
 		this.hitcount = hitcount;
+		this.fname = fname;
 	}
+
+
 
 	public int getSeq() {
 		return seq;
@@ -71,12 +75,23 @@ public class Board implements Serializable {
 	public void setHitcount(int hitcount) {
 		this.hitcount = hitcount;
 	}
+	
+
+	public String getFname() {
+		return fname;
+	}
+
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
 
 	@Override
 	public String toString() {
 		return "Board [seq=" + seq + ", title=" + title + ", writer=" + writer + ", contents=" + contents + ", regdate="
-				+ regdate + ", hitcount=" + hitcount + "]";
+				+ regdate + ", hitcount=" + hitcount + ", fname=" + fname + "]";
 	}
+
+	
 	
 	
 }
