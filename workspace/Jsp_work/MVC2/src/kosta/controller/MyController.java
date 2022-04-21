@@ -11,15 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import kosta.action.Action;
 import kosta.action.ActionForward;
-import kosta.action.DetailAction;
 import kosta.action.InsertAction;
 import kosta.action.InsertFormAction;
-import kosta.action.InsertReplyAction;
 import kosta.action.ListAction;
-import kosta.action.UpdateAction;
-import kosta.action.UpdateFormAction;
 
-@WebServlet("/board/*")
+@WebServlet("/board2/*")
 public class MyController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,63 +23,31 @@ public class MyController extends HttpServlet {
         super();
     }
     
-    public void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
-    	//url 식별
-    	String requestURI = request.getRequestURI();  // /MVC/board/list.do
-    	String contextPath = request.getContextPath(); 
-    	String command = requestURI.substring(contextPath.length()+7);
+    public void doProcess(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    	String requestURI = request.getRequestURI();
+    	String contextPath = request.getContextPath();
+    	String command = requestURI.substring(contextPath.length()+8);
     	System.out.println(command);
-
     	
     	Action action = null;
     	ActionForward forward = null;
     	
-    	if(command.equals("insertForm.do")) {
-    		action = new InsertFormAction();
-    		try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-    		
-    	}else if(command.equals("insertAction.do")) {
+    	if(command.equals("insertAction.do")) {
     		action = new InsertAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-    		
+    	}else if(command.equals("insertForm.do")) {
+    		action = new InsertFormAction();
+    		try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
     	}else if(command.equals("listAction.do")) {
     		action = new ListAction();
-    		try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-    	}else if(command.equals("detailAction.do")) {
-    		action = new DetailAction();
-    		try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-    	}else if(command.equals("updateForm.do")) {
-    		action = new UpdateFormAction();
-    		try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-    	}else if(command.equals("updateAction.do")) {
-    		action = new UpdateAction();
-    		try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-    	}else if(command.equals("insertReplyAction.do")) {
-    		action = new InsertReplyAction();
     		try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
@@ -92,9 +56,9 @@ public class MyController extends HttpServlet {
     	}
     	
     	if(forward != null) {
-    		if(forward.isRedirect()) { //redirect
+    		if(forward.isRedirect()) {
     			response.sendRedirect(forward.getPath());
-    		}else { //Dispatcher
+    		}else {
     			RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
     			dispatcher.forward(request, response);
     		}
