@@ -17,6 +17,7 @@
 		<li>${board.title }</li>
 		<li>${board.writer }</li>
 		<li>${board.contents }</li>
+		<li><a href="board_download?filename=${board.fname}">${board.fname }</a></li>
 	</ul>
 	
 
