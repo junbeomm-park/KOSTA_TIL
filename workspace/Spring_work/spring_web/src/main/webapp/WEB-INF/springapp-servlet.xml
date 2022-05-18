@@ -27,7 +27,7 @@
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/view/"/>	
 		<property name="suffix" value=".jsp"/>
-		<property name="order" value="4"/>	
+		<property name="order" value="3"/>	
 	</bean>
 	
 	<!-- Thymeleaf Setting -->
@@ -48,7 +48,7 @@
 		class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
 		<property name="templateEngine" ref="templateEngine"/>
 		<property name="characterEncoding" value="UTF-8"/>
-		<property name="order" value="2"/>	
+		<property name="order" value="4"/>	
 	</bean>
 	
 	<!-- Transaction Setting -->
@@ -83,7 +83,7 @@
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.tiles3.TilesView"/>
-		<property name="order" value="3"/>	
+		<property name="order" value="2"/>	
 	</bean>
 	
 	<bean id="tilesConfigurer" 
