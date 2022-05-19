@@ -20,6 +20,7 @@ public class SampleTests {
 	
 	@Test
 	public void test() {
+		log.info(restaurant);
 		log.info(restaurant.getChef());
 	}
 
