@@ -25,6 +25,8 @@
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
+	<!-- Mybatis 셋팅 -->
 	<mybatis-spring:scan base-package="org.zerock.mapper"/>	
+	
 	<context:component-scan base-package="org.zerock.service"/>
 </beans>
