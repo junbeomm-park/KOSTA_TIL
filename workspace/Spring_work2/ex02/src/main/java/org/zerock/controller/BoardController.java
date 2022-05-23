@@ -43,6 +43,7 @@ public class BoardController {
 			
 			log.info("total : " + total);
 			
+			//페이징 뷰 처리
 			model.addAttribute("pageMaker", new PageDTO(cri, total));
 		}
 		
