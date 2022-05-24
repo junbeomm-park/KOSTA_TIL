@@ -25,29 +25,29 @@ public class ReplyMapperTests {
 	@Autowired
 	private ReplyMapper mapper;
 	
-//	@Test
-//	public void testMapper() {
-//		
-//		log.info(mapper);
-//		
-//	}
+	@Test
+	public void testMapper() {
+		
+		log.info(mapper);
+		
+	}
 	
-//	@Test
-//	public void testCreate() {
-//		
-//		IntStream.rangeClosed(1, 10).forEach(i -> {
-//			
-//			ReplyVO vo = new ReplyVO();
-//			
-//			//게시물 번호
-//			vo.setBno(bnoArr[i % 5]);
-//			vo.setReply("댓글 테스트 " + i);
-//			vo.setReplyer("replyer" + i);
-//			
-//			mapper.insert(vo);
-//			
-//		});
-//	}
+	@Test
+	public void testCreate() {
+		
+		IntStream.rangeClosed(1, 10).forEach(i -> {
+			
+			ReplyVO vo = new ReplyVO();
+			
+			//게시물 번호
+			vo.setBno(bnoArr[i % 5]);
+			vo.setReply("댓글 테스트 " + i);
+			vo.setReplyer("replyer" + i);
+			
+			mapper.insert(vo);
+			
+		});
+	}
 	
 //	@Test
 //	public void testRead() {
@@ -62,7 +62,7 @@ public class ReplyMapperTests {
 //	@Test
 //	public void testDelete() {
 //		
-//		int targetRno = 1;
+//		Long targetRno = 15L;
 //		
 //		mapper.delete(targetRno);
 //	}
@@ -70,7 +70,7 @@ public class ReplyMapperTests {
 //	@Test
 //	public void testUpdate() {
 //		
-//		Long targetRno = 10L;
+//		Long targetRno = 15L;
 //		
 //		ReplyVO vo = mapper.read(targetRno);
 //		
@@ -81,13 +81,23 @@ public class ReplyMapperTests {
 //		log.info("UPDATE COUNT : " + count);
 //	}
 	
-	@Test
-	public void testList() {
-		
-		Criteria cri = new Criteria();
-		
-		List<ReplyVO> replies = mapper.getListWithPaging(cri, bnoArr[0]);
-		
-		replies.forEach(reply -> log.info(reply));
-	}
+//	@Test
+//	public void testList() {
+//		
+//		Criteria cri = new Criteria();
+//		
+//		List<ReplyVO> replies = mapper.getListWithPaging(cri, bnoArr[0]);
+//		
+//		replies.forEach(reply -> log.info(reply));
+//	}
+	
+//	@Test
+//	public void testList2() {
+//		
+//		Criteria cri = new Criteria(1,10);
+//		
+//		List<ReplyVO> replies = mapper.getListWithPaging(cri, 1245190L);
+//		
+//		replies.forEach(reply -> log.info(reply));
+//	}
 }

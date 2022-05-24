@@ -14,13 +14,16 @@ public interface ReplyMapper {
 	// 특정 댓글 읽기
 	public ReplyVO read(Long rno);
 	
-	// 댓글 삭제
-	public int delete (Long rno);
-	
 	// 댓글 수정
 	public int update(ReplyVO vo);
 	
+	// 댓글 삭제
+	public int delete (Long rno);
+	
 	// 댓글 리스트 페이징 처리
 	public List<ReplyVO> getListWithPaging(@Param("cri") Criteria cri, @Param("bno") Long bno);
+	
+	// 댓글 숫자 파악
+	public int getCountByBno(Long bno);
 
 }
