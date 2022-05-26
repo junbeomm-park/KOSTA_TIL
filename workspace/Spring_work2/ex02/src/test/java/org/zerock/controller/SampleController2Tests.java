@@ -26,7 +26,7 @@ import lombok.extern.log4j.Log4j;
 @ContextConfiguration({"file:src/main/webapp/WEB-INF/spring/root-context.xml",
 "file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml"})
 @Log4j
-public class SampleControllerTests {
+public class SampleController2Tests {
 
 	@Autowired
 	private WebApplicationContext ctx;
