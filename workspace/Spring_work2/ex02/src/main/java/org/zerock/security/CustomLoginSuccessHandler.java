@@ -13,6 +13,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 
 import lombok.extern.log4j.Log4j;
 
+
 @Log4j
 public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 
@@ -33,7 +34,8 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 		log.warn("ROLE NAMES: " + roleNames);
 
 		if (roleNames.contains("ROLE_ADMIN")) {
-
+			
+			log.info("setsetsetsetsetsetse");
 			response.sendRedirect("/sample/admin");
 			return;
 		}

@@ -49,6 +49,6 @@ public class SampleController {
 
     log.info("admin annotaion only");
   }
-
+  
   
 }
